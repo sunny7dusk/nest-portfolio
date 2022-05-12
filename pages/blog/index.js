@@ -85,6 +85,12 @@ export default function Post(props) {
         <meta name='twitter:image' content={previewImg} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
+          rel='stylesheet'
+        />
       </Head>
       <div className='w-[100vw] flex flex-col align-middle justify-center mb-16'>
         <span className='pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center'>

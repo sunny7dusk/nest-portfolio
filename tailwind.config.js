@@ -17,7 +17,8 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      sans: ['Graphik', ...defaultTheme.fontFamily.sans],
+      // body: ['Inter', sans - serif],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
     },
     extend: {

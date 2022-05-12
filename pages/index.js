@@ -72,6 +72,12 @@ export default function Home() {
         <meta name='twitter:image' content={previewImg} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
+          rel='stylesheet'
+        />
       </Head>
       <div className='snap-mandatory snap-y max-h-[100%] h-[100%] w-[100vw] bg-[#171A26] scroll-smooth absolute'>
         <div className='relative max-h-[100%] h-[100%]'>
