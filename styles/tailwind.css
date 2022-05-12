@@ -1,3 +1,20 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+    background-color: #171A26;
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  height: 100%;
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

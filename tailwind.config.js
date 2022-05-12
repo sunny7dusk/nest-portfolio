@@ -1,12 +1,12 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: {
-    mode: "all",
+    mode: 'all',
     content: [
-      "./components/**/*.{js,ts,jsx,tsx}",
-      "./pages/**/*.{js,ts,jsx,tsx}",
+      './components/**/*.{js,ts,jsx,tsx}',
+      './pages/**/*.{js,ts,jsx,tsx}',
     ],
     options: {
       whitelist: [],
@@ -17,7 +17,7 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      sans: ["Graphik", ...defaultTheme.fontFamily.sans],
+      sans: ['Graphik', ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
     },
     extend: {
@@ -28,10 +28,10 @@ module.exports = {
       },
     },
   },
-  variants: { colors: ["hover"] },
-  experimental: "all",
+  variants: { colors: ['hover'] },
+  experimental: 'all',
   future: {
     purgeLayersByDefault: true,
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

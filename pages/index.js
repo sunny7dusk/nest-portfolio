@@ -1,68 +1,90 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head';
+import Title from './Title';
+import Intro from './Intro';
+import Skills from './Skills';
+import Projects from './Projects';
+import Contract from './Contacts';
+import Blog from './Blog';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
+  const [y, setY] = useState(0);
+  const [prevY, setPrevY] = useState(y);
+
+  // const appHeight = () =>
+  //   document.documentElement.style.setProperty(
+  //     '--app-height',
+  //     `${window.innerHeight}px`
+  //   );
+  // window.addEventListener('resize', appHeight);
+  // appHeight();
+
+  useEffect(() => {
+    let handleScroll = () => {
+      setY((curr) => {
+        setPrevY(curr);
+        return window.scrollY;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    let changingHeight = () => {
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    window.addEventListener('resize', changingHeight);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', changingHeight);
+    };
+  }, []);
+
+  // function calcY() {
+  //   console.log('y = ' + y);
+  //   console.log('prevY = ' + prevY);
+  //   return y / 5;
+  // }
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Nate's Portfolio</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to{" "}
-          <a href="" className="text-blue-500">
-            NEST Starter
-          </a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
+      <div className='snap-mandatory snap-y max-h-[100%] h-[100%] w-[100vw] bg-[#171A26] scroll-smooth absolute'>
+        <div className='relative max-h-[100%] h-[100%]'>
+          <div
+            className={`fixed w-full h-[100%]`}
+            // {y !== 0 ? 100 : 90}
+            style={{
+              clipPath: `polygon(${
+                y !== 0 ? 100 : 90
+              }% 0, 100% 0%, 100% 100%, ${y * 2}% 100%)`,
+            }}
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <Image
+              src={'/assets/dark7storm_full.webp'}
+              layout='fill'
+              objectFit='cover'
+              objectPosition={'65%'}
+              quality={100}
+              alt='background image'
+            />
+            <div className='h-[100%] bg-black opacity-25'></div>
+          </div>
+          <Title y={y} prevY={prevY} />
+          <Intro y={y} />
+          <Skills y={y} />
+          <Projects y={y} />
+          <Blog y={y} />
+          <Contract y={y} />
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }

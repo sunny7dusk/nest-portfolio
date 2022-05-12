@@ -4,12 +4,12 @@ const STUDIO_REWRITE = {
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3333/studio/:path*'
       : '/studio/index.html',
-}
+};
 
 module.exports = {
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ['en'],
+    defaultLocale: 'en',
   },
-   rewrites: () => [STUDIO_REWRITE],
+  rewrites: () => [STUDIO_REWRITE],
 };
