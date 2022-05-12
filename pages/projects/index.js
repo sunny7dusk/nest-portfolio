@@ -72,7 +72,7 @@ export default function Post(props) {
             // </article>
             <article
               key={item.slug.current}
-              className='p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] max-w-xs mr-8 ml-8 w-[70vw] xl:max-w-lg '
+              className='p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] mr-8 ml-8 w-[70vw] xl:max-w-lg '
             >
               <a
                 onClick={(event) => clickArticle(post.slug, event)}
@@ -81,7 +81,7 @@ export default function Post(props) {
               >
                 <img
                   src={item.imageUrl}
-                  className='max-w-sm w-sm max-h-52 object-contain self-center'
+                  className='max-h-52 object-contain self-center'
                 />
                 <div className='mt-12'>
                   {item.publishedAt && (
