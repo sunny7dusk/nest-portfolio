@@ -5,7 +5,10 @@ import Marquee from 'react-fast-marquee';
 export default function Skills({ y }) {
   return (
     <>
-      <div className='snap-center w-full flex flex-col justify-center mt-36'>
+      <div
+        // style={{ opacity: `${y >= 1400 ? 1 - (y - 1400) / 100 : 1}` }}
+        className='snap-center w-full flex flex-col justify-center mt-36'
+      >
         <div className=' hidden xl:block w-[50vw] self-center'>
           <Marquee
             className={`h-[100px] mb-3 self-center ` + styles.logos}

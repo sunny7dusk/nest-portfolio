@@ -102,14 +102,14 @@ export default function Home() {
               src={'/assets/dark7storm_full.webp'}
               width={1980}
               height={1080}
-              className='object-cover h-[100%] object-[65%]'
+              className='object-cover h-[100%] w-[100vw] object-[65%]'
             />
             <div className='h-[100%] bg-black opacity-25'></div>
           </div>
           <Title y={y} prevY={prevY} />
           <Intro y={y} />
           <Skills y={y} />
-          <Bio />
+          <Bio y={y} />
           <Projects y={y} />
           <Blogs y={y} />
           <Contact y={y} />

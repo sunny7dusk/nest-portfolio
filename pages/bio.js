@@ -1,7 +1,10 @@
-export default function Bio() {
+export default function Bio({ y }) {
   return (
     <>
-      <div className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'>
+      <div
+        // style={{ opacity: `${y >= 2200 ? 1 - (y - 2200) / 100 : 1}` }}
+        className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'
+      >
         <div className='w-[50vw] self-center'>
           <span className='decoration-solid bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100'>
             Here's my story so far :<br />

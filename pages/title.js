@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-
 export default function Title({ y }) {
   // const [y, setY] = useState(0);
 
@@ -16,7 +13,10 @@ export default function Title({ y }) {
 
   return (
     <>
-      <div className='snap-center w-full h-[100%]  flex flex-col lg:px-[4rem] px-6 sm:px-10 align-top justify-center'>
+      <div
+        style={{ opacity: `${y >= 200 ? 1 - (y - 200) / 100 : 1}` }}
+        className={`snap-center w-full h-[100%]  flex flex-col lg:px-[4rem] px-6 sm:px-10 align-top justify-center animate ease-in-out `}
+      >
         <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-lg sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-9xl tracking-wide'>
           FULL STACK <br /> DEVELOPER
         </span>
