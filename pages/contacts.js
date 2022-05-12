@@ -51,7 +51,7 @@ export default function Contact({ y }) {
               />
             </a>
             <a
-              href='https://drive.google.com/file/d/1Q8aYVYHCu2syZGTNGaEGt2oJ23o3DgPI/view?usp=sharing'
+              href='https://drive.google.com/file/d/1sFEicIs97ggVChxU8RDbVUpwEtk15MNB/view?usp=sharing'
               className='flex flex-row align-middle justify-center'
               target='_blank'
               rel='noreferrer noopener'
