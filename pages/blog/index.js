@@ -85,9 +85,11 @@ export default function Post(props) {
               >
                 <img src={item.imageUrl} className='max-w-sm w-sm' />
                 <div className='mt-12'>
-                  {/* <p className='text-xs font-medium text-gray-500'>
-                    {item.publishedAt.split('T')[0]}
-                  </p> */}
+                  {item.publishedAt && (
+                    <p className='text-xs font-medium text-gray-500'>
+                      {item.publishedAt.split('T')[0]}
+                    </p>
+                  )}
                   <h5 className='mt-2 text-xl font-bold text-white'>
                     {item.title}
                   </h5>

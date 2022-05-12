@@ -13,7 +13,7 @@ export default function Intro({ y, prevY }) {
           <br />
           <div className='text-justify'>
             <span className='bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl'>
-              Growing up in 🇲🇾, I have always been fascinated by the
+              Growing up in Malaysia, I have always been fascinated by the
               technological side of the world. Driven by the desire to learn, I
               constantly immerse myself in new and upcoming programming
               technologies. This is what led me here today, as a programmer
