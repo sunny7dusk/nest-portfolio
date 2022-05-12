@@ -2,7 +2,6 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
-import { PortableText } from '@portabletext/react';
 import { usePreviewSubscription, urlFor } from '../../lib/sanity';
 import { getClient } from '../../lib/sanity.server';
 import ReactMarkdown from 'react-markdown';
@@ -40,7 +39,7 @@ export default function Post({ data, preview }) {
 
   const { title, mainImage, body } = post;
 
-  console.log(post);
+  // console.log(post);
 
   return (
     <article className='w-[100vw] flex flex-col align-middle justify-center'>
@@ -99,6 +98,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }

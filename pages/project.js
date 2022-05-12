@@ -11,7 +11,8 @@ export default function Projects({ y }) {
             >
               projects
             </a>{' '}
-            I've done! Woah, 123 commits on GitHub!
+            I've done!
+            {/* Woah, 123 commits on GitHub! */}
           </span>
         </div>
       </div>

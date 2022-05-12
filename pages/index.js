@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import Title from './Title';
-import Intro from './Intro';
-import Skills from './Skills';
-import Projects from './Projects';
-import Contract from './Contacts';
-import Blog from './Blog';
+import Title from './title';
+import Intro from './intro';
+import Skills from './skills';
+import Projects from './project';
+import Contract from './contracts';
+import Blogs from './blogs';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
@@ -81,7 +81,7 @@ export default function Home() {
           <Intro y={y} />
           <Skills y={y} />
           <Projects y={y} />
-          <Blog y={y} />
+          <Blogs y={y} />
           <Contract y={y} />
         </div>
       </div>

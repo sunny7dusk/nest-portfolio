@@ -1,4 +1,4 @@
-export default function Blog({ y }) {
+export default function Blogs({ y }) {
   return (
     <>
       <div className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'>
