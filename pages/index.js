@@ -90,13 +90,19 @@ export default function Home() {
               }% 0, 100% 0%, 100% 100%, ${y * 2}% 100%)`,
             }}
           >
-            <Image
+            {/* <Image
               src={'/assets/dark7storm_full.webp'}
               layout='fill'
               objectFit='cover'
               objectPosition={'65%'}
               quality={100}
               alt='background image'
+            /> */}
+            <img
+              src={'/assets/dark7storm_full.webp'}
+              width={1980}
+              height={1080}
+              className='object-cover h-[100%] object-[65%]'
             />
             <div className='h-[100%] bg-black opacity-25'></div>
           </div>
