@@ -3,7 +3,8 @@ import Title from './title';
 import Intro from './intro';
 import Skills from './skills';
 import Projects from './project';
-import Contract from './contracts';
+import Bio from './bio';
+import Contact from './contacts';
 import Blogs from './blogs';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -11,14 +12,6 @@ import Image from 'next/image';
 export default function Home() {
   const [y, setY] = useState(0);
   const [prevY, setPrevY] = useState(y);
-
-  // const appHeight = () =>
-  //   document.documentElement.style.setProperty(
-  //     '--app-height',
-  //     `${window.innerHeight}px`
-  //   );
-  // window.addEventListener('resize', appHeight);
-  // appHeight();
 
   useEffect(() => {
     let handleScroll = () => {
@@ -45,16 +38,43 @@ export default function Home() {
     };
   }, []);
 
-  // function calcY() {
-  //   console.log('y = ' + y);
-  //   console.log('prevY = ' + prevY);
-  //   return y / 5;
-  // }
+  const previewImg = '/assets/dark7storm_full.webp';
 
   return (
     <>
       <Head>
         <title>Nate's Portfolio</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with React.'
+        />
+        <link rel='canonical' href='/Portfolio' />
+        <meta
+          property='og:title'
+          content='Nathaniel Chai Zhuo En | Portfolio'
+        />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:url'
+          content='https://sunny7dusk.github.io/Portfolio/'
+        />
+        <meta property='og:image' content={previewImg} />
+        <meta
+          name='twitter:title'
+          content='Nathaniel Chai Zhuo En | Portfolio'
+        />
+        <meta
+          name='twitter:description'
+          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with React.'
+        />
+        <meta
+          name='og:description'
+          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with React.'
+        />
+        <meta name='twitter:image' content={previewImg} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='image' content={previewImg} />
       </Head>
       <div className='snap-mandatory snap-y max-h-[100%] h-[100%] w-[100vw] bg-[#171A26] scroll-smooth absolute'>
         <div className='relative max-h-[100%] h-[100%]'>
@@ -72,6 +92,8 @@ export default function Home() {
               layout='fill'
               objectFit='cover'
               objectPosition={'65%'}
+              width={1980}
+              height={1080}
               quality={100}
               alt='background image'
             />
@@ -80,9 +102,10 @@ export default function Home() {
           <Title y={y} prevY={prevY} />
           <Intro y={y} />
           <Skills y={y} />
+          <Bio />
           <Projects y={y} />
           <Blogs y={y} />
-          <Contract y={y} />
+          <Contact y={y} />
         </div>
       </div>
     </>

@@ -59,6 +59,34 @@ export default function Post(props) {
   //   console.log(posts);
   return (
     <>
+      <Head>
+        <title>Nate's Blog</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
+        />
+        <link rel='canonical' href='/blog' />
+        <meta property='og:title' content='Nathaniel Chai Zhuo En | Blog' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:url'
+          content='https://sunny7dusk.github.io/Portfolio/'
+        />
+        <meta property='og:image' content={previewImg} />
+        <meta name='twitter:title' content='Nathaniel Chai Zhuo En | Blog' />
+        <meta
+          name='twitter:description'
+          content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
+        />
+        <meta
+          name='og:description'
+          content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
+        />
+        <meta name='twitter:image' content={previewImg} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='image' content={previewImg} />
+      </Head>
       <div className='w-[100vw] flex flex-col align-middle justify-center mb-16'>
         <span className='pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center'>
           Nate's Blog!

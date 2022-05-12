@@ -56,6 +56,7 @@ export default {
       title: 'Excerpt',
       description: 'Keep it short!',
       type: 'markdown',
+      rule: (Rule) => Rule.required().min(10).max(30),
     },
   ],
 

@@ -42,12 +42,43 @@ export default function Post(props) {
   const clickArticle = (slug, event) => {
     event.preventDefault();
     // console.log(slug);
-    router.push(`/blog/${slug.current}`);
+    router.push(`/projects/${slug.current}`);
   };
 
   //   console.log(posts);
   return (
     <>
+      <Head>
+        <title>Nate's Projects</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
+        />
+        <link rel='canonical' href='/projects' />
+        <meta property='og:title' content='Nathaniel Chai Zhuo En | Projects' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:url'
+          content='https://sunny7dusk.github.io/Portfolio/'
+        />
+        <meta property='og:image' content={previewImg} />
+        <meta
+          name='twitter:title'
+          content='Nathaniel Chai Zhuo En | Projects'
+        />
+        <meta
+          name='twitter:description'
+          content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
+        />
+        <meta
+          name='og:description'
+          content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
+        />
+        <meta name='twitter:image' content={previewImg} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='image' content={previewImg} />
+      </Head>
       <div className='w-[100vw] flex flex-col align-middle justify-center mb-16'>
         <span className='pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center'>
           My Projects
@@ -75,7 +106,7 @@ export default function Post(props) {
               className='p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] mr-8 ml-8 w-[70vw] xl:max-w-lg '
             >
               <a
-                onClick={(event) => clickArticle(post.slug, event)}
+                onClick={(event) => clickArticle(item.slug, event)}
                 href={`*`}
                 className='flex flex-col justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90'
               >

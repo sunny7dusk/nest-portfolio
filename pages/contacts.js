@@ -17,7 +17,12 @@ export default function Contact({ y }) {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <img src='/assets/github.webp' width='60' />
+              <img
+                src='/assets/github.webp'
+                width='60'
+                alt='github profile'
+                title='My GitHub Profile'
+              />
             </a>
             <a
               href='https://www.instagram.com/dark7storm/'
@@ -25,7 +30,12 @@ export default function Contact({ y }) {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <img src='/assets/instagram.webp' width='60' />
+              <img
+                src='/assets/instagram.webp'
+                width='60'
+                alt='instagram profile'
+                title='My Instagram Profile'
+              />
             </a>
             <a
               href='https://www.linkedin.com/in/nathaniel-chai-48aab4135/'
@@ -33,7 +43,12 @@ export default function Contact({ y }) {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <img src='/assets/linkedin.webp' width='60' />
+              <img
+                src='/assets/linkedin.webp'
+                width='60'
+                alt='linkedin profile'
+                title='My LinkedIn Profile'
+              />
             </a>
             <a
               href='https://drive.google.com/file/d/1Q8aYVYHCu2syZGTNGaEGt2oJ23o3DgPI/view?usp=sharing'
@@ -41,7 +56,12 @@ export default function Contact({ y }) {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <img src='/assets/resume-icon-.webp' width='60' />
+              <img
+                src='/assets/resume-icon-.webp'
+                width='60'
+                alt='resume'
+                title='My resume'
+              />
             </a>
           </div>
         </div>

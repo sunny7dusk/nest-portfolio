@@ -9,6 +9,8 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -25,7 +27,8 @@ const postQuery = groq`
 `;
 
 export default function Post({ data, preview }) {
-  const remarkP = [remarkGfm];
+  const remarkP = [remarkGfm, remarkMath];
+  const rehypeP = [rehypeKatex];
   const router = useRouter();
 
   const { data: post } = usePreviewSubscription(postQuery, {
@@ -45,10 +48,10 @@ export default function Post({ data, preview }) {
   return (
     <>
       <Head>
-        <title>Nate's Blog | {title}</title>
+        <title>Nate's Projects | {title}</title>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content={excerpt} />
-        <link rel='canonical' href={`/blog/${post.slug.current}`} />
+        <link rel='canonical' href={`/projects/${post.slug.current}`} />
         <meta
           property='og:title'
           content={`Nathaniel Chai Zhuo En | ${excerpt}`}

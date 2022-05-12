@@ -19,18 +19,21 @@ export default function Skills({ y }) {
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-flutter-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-python-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img src='/assets/angular.svg' alt='' width={50} height={50} />
             <img
@@ -38,6 +41,7 @@ export default function Skills({ y }) {
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img src='/assets/js-format.webp' alt='' width={50} height={50} />
             <img
@@ -45,18 +49,21 @@ export default function Skills({ y }) {
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-nodejs-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-react-native-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img src='/assets/vue.png' alt='' width={50} height={50} />
           </Marquee>
@@ -75,18 +82,21 @@ export default function Skills({ y }) {
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-flutter-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-python-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img src='/assets/angular.svg' alt='' width={50} height={50} />
           </Marquee>
@@ -101,6 +111,7 @@ export default function Skills({ y }) {
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img src='/assets/js-format.webp' alt='' width={50} height={50} />
             <img
@@ -108,18 +119,21 @@ export default function Skills({ y }) {
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-nodejs-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img
               src='/assets/icons8-react-native-96.webp'
               alt=''
               width={50}
               height={50}
+              title=''
             />
             <img src='/assets/vue.png' alt='' width={50} height={50} />
           </Marquee>
