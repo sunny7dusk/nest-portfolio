@@ -55,10 +55,7 @@ export default function Home() {
           content='Nathaniel Chai Zhuo En | Portfolio'
         />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:url'
-          content='https://sunny7dusk.github.io/Portfolio/'
-        />
+        <meta property='og:url' content='https://www.sunny7dusk.dev/' />
         <meta property='og:image' content={previewImg} />
         <meta
           name='twitter:title'
@@ -92,8 +89,6 @@ export default function Home() {
               layout='fill'
               objectFit='cover'
               objectPosition={'65%'}
-              width={1980}
-              height={1080}
               quality={100}
               alt='background image'
             />

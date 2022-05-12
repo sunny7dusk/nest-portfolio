@@ -22,7 +22,8 @@ const postQuery = groq`
       _id,
       title
     },
-    "slug": slug.current
+    "slug": slug.current,
+    excerpt
   }
 `;
 
@@ -43,6 +44,8 @@ export default function Post({ data, preview }) {
 
   const { title, mainImage, body, excerpt } = post;
 
+  const previewImg = urlFor(mainImage).url();
+
   // console.log(post);
 
   return (
@@ -51,7 +54,7 @@ export default function Post({ data, preview }) {
         <title>Nate's Projects | {title}</title>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content={excerpt} />
-        <link rel='canonical' href={`/projects/${post.slug.current}`} />
+        <link rel='canonical' href={`/projects/${post.slug}`} />
         <meta
           property='og:title'
           content={`Nathaniel Chai Zhuo En | ${excerpt}`}
@@ -59,7 +62,7 @@ export default function Post({ data, preview }) {
         <meta property='og:type' content='website' />
         <meta
           property='og:url'
-          content='https://sunny7dusk.github.io/Portfolio/'
+          content={`https://www.sunny7dusk.dev/projects/${post.slug.current}`}
         />
         <meta property='og:image' content={previewImg} />
         <meta
@@ -85,6 +88,7 @@ export default function Post({ data, preview }) {
           children={body}
           className='prose prose-stone lg:prose-xl w-[90vw] m-8 self-center bg-gray-100 rounded-lg p-8'
           remarkPlugins={remarkP}
+          rehypePlugins={rehypeP}
           components={{
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');

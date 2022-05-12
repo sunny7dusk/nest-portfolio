@@ -54,7 +54,7 @@ export default function Post(props) {
     router.push(`/blog/${slug.current}`);
   };
 
-  console.log(post);
+  const previewImg = '/assets/dark7storm_full.webp';
 
   //   console.log(posts);
   return (
@@ -69,10 +69,7 @@ export default function Post(props) {
         <link rel='canonical' href='/blog' />
         <meta property='og:title' content='Nathaniel Chai Zhuo En | Blog' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:url'
-          content='https://sunny7dusk.github.io/Portfolio/'
-        />
+        <meta property='og:url' content='https://www.sunny7dusk.dev/blog' />
         <meta property='og:image' content={previewImg} />
         <meta name='twitter:title' content='Nathaniel Chai Zhuo En | Blog' />
         <meta
@@ -101,14 +98,6 @@ export default function Post(props) {
       <div className='w-[100vw] grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center content-center items-center'>
         {items &&
           items.map((item) => (
-            // <article >
-            //   <h3 className='text-lg'> {post.title} </h3>
-            //   <p className='mt-3'>{post.excerpt}</p>
-            //   <img src={post.imageUrl} className='max-w-sm' />
-            //   {/** categories*/}
-            //   {/** author*/}
-            //   {/** data */}
-            // </article>
             <article
               key={item.slug.current}
               className='p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] max-w-xs mr-8 ml-8 w-[70vw] xl:max-w-lg  '
@@ -120,7 +109,7 @@ export default function Post(props) {
               >
                 <img
                   src={item.imageUrl}
-                  className='max-h-52 object-contain self-center'
+                  className='max-h-52 object-contain self-center saturate-[0.8]'
                 />
                 <div className='mt-12'>
                   {item.publishedAt && (
@@ -163,7 +152,8 @@ const query = groq`
   ..., 
   author->,
   categories[]->,
-  "imageUrl": mainImage.asset->url
+  "imageUrl": mainImage.asset->url,
+  excerpt,
 }
 `;
 

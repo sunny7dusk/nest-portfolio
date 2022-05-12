@@ -9,6 +9,8 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -20,12 +22,14 @@ const postQuery = groq`
       _id,
       title
     },
-    "slug": slug.current
+    "slug": slug.current,
+    excerpt
   }
 `;
 
 export default function Post({ data, preview }) {
-  const remarkP = [remarkGfm];
+  const remarkP = [remarkGfm, remarkMath];
+  const rehypeP = [rehypeKatex];
   const router = useRouter();
 
   const { data: post } = usePreviewSubscription(postQuery, {
@@ -42,13 +46,15 @@ export default function Post({ data, preview }) {
 
   // console.log(post);
 
+  const previewImg = urlFor(mainImage).url();
+
   return (
     <>
       <Head>
         <title>Nate's Blog | {title}</title>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content={excerpt} />
-        <link rel='canonical' href={`/blog/${post.slug.current}`} />
+        <link rel='canonical' href={`/blog/${post.slug}`} />
         <meta
           property='og:title'
           content={`Nathaniel Chai Zhuo En | ${excerpt}`}
@@ -56,7 +62,7 @@ export default function Post({ data, preview }) {
         <meta property='og:type' content='website' />
         <meta
           property='og:url'
-          content='https://sunny7dusk.github.io/Portfolio/'
+          content={`https://www.sunny7dusk.dev/blog/${post.slug.current}`}
         />
         <meta property='og:image' content={previewImg} />
         <meta
@@ -70,18 +76,24 @@ export default function Post({ data, preview }) {
         <meta property='image' content={previewImg} />
       </Head>
       <article className='w-[100vw] flex flex-col align-middle justify-center'>
-        <span className='pt-8 pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center'>
+        <h1 className='pt-8 pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center'>
           {title}
-        </span>
+        </h1>
         {mainImage && (
           <figure className='w-[70vw] text-center self-center'>
-            <img src={urlFor(mainImage).url()} className=' rounded-lg' />
+            <img
+              src={urlFor(mainImage).url()}
+              alt='image'
+              title={title}
+              className=' rounded-lg'
+            />
           </figure>
         )}
         <ReactMarkdown
           children={body}
           className='prose prose-stone lg:prose-xl w-[90vw] m-8 self-center bg-gray-100 rounded-lg p-8'
           remarkPlugins={remarkP}
+          rehypePlugins={rehypeP}
           components={{
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
