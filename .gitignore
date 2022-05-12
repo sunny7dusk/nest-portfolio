@@ -34,3 +34,5 @@ yarn-error.log*
 .vercel
 
 .env.local
+
+/studio/node_modules
