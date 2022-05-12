@@ -11,6 +11,7 @@ import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import { useEffect } from 'react';
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -80,12 +81,12 @@ export default function Post({ data, preview }) {
           {title}
         </h1>
         {mainImage && (
-          <figure className='w-[70vw] text-center self-center'>
+          <figure className='w-[70vw] text-center self-center flex flex-col align-middle justify-center'>
             <img
               src={urlFor(mainImage).url()}
               alt='image'
               title={title}
-              className=' rounded-lg'
+              className=' rounded-lg self-center m-0'
             />
           </figure>
         )}

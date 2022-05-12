@@ -80,8 +80,13 @@ export default function Post({ data, preview }) {
           {title}
         </span>
         {mainImage && (
-          <figure className='w-[70vw] text-center self-center'>
-            <img src={urlFor(mainImage).url()} className=' rounded-lg' />
+          <figure className='w-[70vw] text-center self-center flex flex-col align-middle justify-center'>
+            <img
+              src={urlFor(mainImage).url()}
+              alt='image'
+              title={title}
+              className=' rounded-lg self-center m-0'
+            />
           </figure>
         )}
         <ReactMarkdown

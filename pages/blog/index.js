@@ -1,16 +1,17 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { usePreviewSubscription } from '@lib/sanity';
-import client, { getClient, PortableText } from '@lib/sanity.server';
+import { getClient } from '@lib/sanity.server';
 
 import { groq } from 'next-sanity';
 import { useEffect, useState } from 'react';
+
+import { BeatLoader } from 'react-spinners';
 
 export default function Post(props) {
   const { postdata, preview } = props;
   const [items, setItems] = useState([]);
   const post = [...postdata];
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
@@ -34,15 +35,6 @@ export default function Post(props) {
           prev.length,
           prev.length + 6 >= post.length ? post.length + 1 : prev.length + 6 - 1
         );
-        // console.log(post.length - prev.length + 1);
-        // console.log(
-        //   post.slice(
-        //     prev.length,
-        //     prev.length + 6 >= post.length
-        //       ? post.length + 1
-        //       : prev.length + 6 - 1
-        //   )
-        // );
         return [...prev, ...toAdd];
       });
     console.log(post);
@@ -51,10 +43,20 @@ export default function Post(props) {
   const clickArticle = (slug, event) => {
     event.preventDefault();
     // console.log(slug);
+    setLoading(true);
     router.push(`/blog/${slug.current}`);
   };
 
   const previewImg = '/assets/dark7storm_full.webp';
+
+  if (loading)
+    return (
+      <>
+        <div className='w-[100vw] h-[100vh] flex flex-col align-middle justify-center text-center'>
+          <BeatLoader color='#e2e8f0' size={40} />
+        </div>
+      </>
+    );
 
   //   console.log(posts);
   return (
