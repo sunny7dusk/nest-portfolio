@@ -47,7 +47,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         <meta
           name='description'
-          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with React.'
+          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
         <link rel='canonical' href='/Portfolio' />
         <meta
