@@ -32,9 +32,7 @@ export default function Post(props) {
       setItems((prev) => {
         let toAdd = post.slice(
           prev.length,
-          prev.length + 6 >= post.length
-            ? post.length - items.length
-            : prev.length + 6
+          prev.length + 6 >= post.length ? post.length + 1 : prev.length + 6 - 1
         );
         return [...prev, ...toAdd];
       });
@@ -73,7 +71,7 @@ export default function Post(props) {
             //   {/** data */}
             // </article>
             <article
-              key={item.slug}
+              key={item.slug.current}
               className='p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] max-w-xs mr-8 ml-8 w-[70vw] xl:max-w-lg '
             >
               <a
@@ -81,7 +79,10 @@ export default function Post(props) {
                 href={`*`}
                 className='flex flex-col justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90'
               >
-                <img src={item.imageUrl} className='max-w-sm w-sm' />
+                <img
+                  src={item.imageUrl}
+                  className='max-w-sm w-sm max-h-52 object-contain self-center'
+                />
                 <div className='mt-12'>
                   {item.publishedAt && (
                     <p className='text-xs font-medium text-gray-500'>
@@ -105,7 +106,7 @@ export default function Post(props) {
       <div className='w-[100vw] flex flex-col align-middle justify-center mt-16 pb-16'>
         <div className='self-center m-auto'>
           <a
-            className='inline-block p-[2px] rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:text-white active:text-opacity-75 focus:outline-none focus:ring'
+            className='inline-block p-[2px] rounded-full bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] hover:text-white active:text-opacity-75 focus:outline-none focus:ring'
             href=''
             onClick={(event) => action(event)}
           >

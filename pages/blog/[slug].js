@@ -46,7 +46,7 @@ export default function Post({ data, preview }) {
       <span className='pt-8 pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center'>
         {title}
       </span>
-      {urlFor(mainImage).url() && (
+      {mainImage && (
         <figure className='w-[70vw] text-center self-center'>
           <img src={urlFor(mainImage).url()} className=' rounded-lg' />
         </figure>
