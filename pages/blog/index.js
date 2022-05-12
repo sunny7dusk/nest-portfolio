@@ -92,7 +92,7 @@ export default function Post(props) {
               >
                 <img
                   src={item.imageUrl}
-                  className='max-w-sm w-sm max-h-52 object-contain self-center'
+                  className='max-h-52 object-contain self-center'
                 />
                 <div className='mt-12'>
                   {item.publishedAt && (
