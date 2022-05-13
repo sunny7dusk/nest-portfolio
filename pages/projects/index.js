@@ -114,7 +114,7 @@ export default function Post(props) {
             >
               <a
                 onClick={(event) => clickArticle(item.slug, event)}
-                href={`*`}
+                href={`/`}
                 className='flex flex-col justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90'
               >
                 <img
