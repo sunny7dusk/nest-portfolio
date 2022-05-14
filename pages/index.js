@@ -46,7 +46,7 @@ export default function Home() {
         <title>Nate's Portfolio</title>
         <link rel='icon' href='/favicon.ico' />
         <meta
-          name='description'
+          property='description'
           content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
         <link rel='canonical' href='/Portfolio' />
@@ -58,22 +58,26 @@ export default function Home() {
         <meta property='og:url' content='https://www.sunny7dusk.dev/' />
         <meta property='og:image' content={previewImg} />
         <meta
-          name='twitter:title'
+          property='twitter:title'
           content='Nathaniel Chai Zhuo En | Portfolio'
         />
         <meta
-          name='twitter:description'
-          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with React.'
+          property='twitter:description'
+          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
         <meta
-          name='og:description'
-          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with React.'
+          property='og:description'
+          content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
-        <meta name='twitter:image' content={previewImg} />
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:image' content={previewImg} />
+        <meta property='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
           rel='stylesheet'

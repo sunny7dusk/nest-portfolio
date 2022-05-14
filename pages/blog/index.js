@@ -65,7 +65,7 @@ export default function Post(props) {
         <title>Nate's Blog</title>
         <link rel='icon' href='/favicon.ico' />
         <meta
-          name='description'
+          property='description'
           content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
         />
         <link rel='canonical' href='/blog' />
@@ -73,20 +73,27 @@ export default function Post(props) {
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://www.sunny7dusk.dev/blog' />
         <meta property='og:image' content={previewImg} />
-        <meta name='twitter:title' content='Nathaniel Chai Zhuo En | Blog' />
         <meta
-          name='twitter:description'
+          property='twitter:title'
+          content='Nathaniel Chai Zhuo En | Blog'
+        />
+        <meta
+          property='twitter:description'
           content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
         />
         <meta
-          name='og:description'
+          property='og:description'
           content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
         />
-        <meta name='twitter:image' content={previewImg} />
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:image' content={previewImg} />
+        <meta property='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
           rel='stylesheet'

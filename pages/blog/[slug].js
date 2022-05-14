@@ -54,7 +54,7 @@ export default function Post({ data, preview }) {
       <Head>
         <title>Nate's Blog | {title}</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content={excerpt} />
+        <meta property='description' content={excerpt} />
         <link rel='canonical' href={`/blog/${post.slug}`} />
         <meta
           property='og:title'
@@ -67,16 +67,20 @@ export default function Post({ data, preview }) {
         />
         <meta property='og:image' content={previewImg} />
         <meta
-          name='twitter:title'
+          property='twitter:title'
           content={`Nathaniel Chai Zhuo En | ${excerpt}`}
         />
-        <meta name='twitter:description' content={excerpt} />
-        <meta name='og:description' content={excerpt} />
-        <meta name='twitter:image' content={previewImg} />
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:description' content={excerpt} />
+        <meta property='og:description' content={excerpt} />
+        <meta property='twitter:image' content={previewImg} />
+        <meta property='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
           rel='stylesheet'

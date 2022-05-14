@@ -64,7 +64,7 @@ export default function Post(props) {
         <title>Nate's Projects</title>
         <link rel='icon' href='/favicon.ico' />
         <meta
-          name='description'
+          property='description'
           content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
         />
         <link rel='canonical' href='/projects' />
@@ -73,22 +73,26 @@ export default function Post(props) {
         <meta property='og:url' content='https://www.sunny7dusk.dev/projects' />
         <meta property='og:image' content={previewImg} />
         <meta
-          name='twitter:title'
+          property='twitter:title'
           content='Nathaniel Chai Zhuo En | Projects'
         />
         <meta
-          name='twitter:description'
+          property='twitter:description'
           content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
         />
         <meta
-          name='og:description'
+          property='og:description'
           content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
         />
-        <meta name='twitter:image' content={previewImg} />
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:image' content={previewImg} />
+        <meta property='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
           rel='stylesheet'
