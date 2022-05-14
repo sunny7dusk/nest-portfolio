@@ -66,13 +66,13 @@ export default function Post({ data, preview }) {
         />
         <meta property='og:image' content={previewImg} />
         <meta
-          property='twitter:title'
+          name='twitter:title'
           content={`Nathaniel Chai Zhuo En | ${excerpt}`}
         />
-        <meta property='twitter:description' content={excerpt} />
+        <meta name='twitter:description' content={excerpt} />
         <meta property='og:description' content={excerpt} />
-        <meta property='twitter:image' content={previewImg} />
-        <meta property='twitter:card' content='summary_large_image' />
+        <meta name='twitter:image' content={previewImg} />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link

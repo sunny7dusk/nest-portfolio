@@ -73,19 +73,19 @@ export default function Post(props) {
         <meta property='og:url' content='https://www.sunny7dusk.dev/projects' />
         <meta property='og:image' content={previewImg} />
         <meta
-          property='twitter:title'
+          name='twitter:title'
           content='Nathaniel Chai Zhuo En | Projects'
         />
         <meta
-          property='twitter:description'
+          name='twitter:description'
           content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
         />
         <meta
           property='og:description'
           content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
         />
-        <meta property='twitter:image' content={previewImg} />
-        <meta property='twitter:card' content='summary_large_image' />
+        <meta name='twitter:image' content={previewImg} />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
