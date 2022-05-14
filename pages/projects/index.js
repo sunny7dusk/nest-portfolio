@@ -46,7 +46,7 @@ export default function Post(props) {
     router.push(`/projects/${slug.current}`);
   };
 
-  const previewImg = '/assets/dark7storm_full.webp';
+  const previewImg = 'https://i.imgur.com/YWr7FcG.jpg';
 
   if (loading)
     return (

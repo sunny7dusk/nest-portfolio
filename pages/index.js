@@ -38,7 +38,7 @@ export default function Home() {
     };
   }, []);
 
-  const previewImg = '/assets/dark7storm_full.webp';
+  const previewImg = 'https://i.imgur.com/YWr7FcG.jpg';
 
   return (
     <>
@@ -58,19 +58,19 @@ export default function Home() {
         <meta property='og:url' content='https://www.sunny7dusk.dev/' />
         <meta property='og:image' content={previewImg} />
         <meta
-          property='twitter:title'
+          name='twitter:title'
           content='Nathaniel Chai Zhuo En | Portfolio'
         />
         <meta
-          property='twitter:description'
+          name='twitter:description'
           content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
         <meta
           property='og:description'
           content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
-        <meta property='twitter:image' content={previewImg} />
-        <meta property='twitter:card' content='summary_large_image' />
+        <meta name='twitter:image' content={previewImg} />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
