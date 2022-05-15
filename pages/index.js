@@ -12,9 +12,6 @@ import { motion, useViewportScroll } from 'framer-motion';
 
 export default function Home() {
   const { scrollYProgress } = useViewportScroll();
-  // useEffect(() => {
-  //   console.log(scrollYProgress);
-  // }, [scrollYProgress]);
   const [y, setY] = useState(0);
 
   useEffect(() => {
@@ -98,16 +95,16 @@ export default function Home() {
           rel='stylesheet'
         />
       </Head>
-      <div className='snap-mandatory snap-y max-h-[100%] h-[100%] w-[100vw] bg-[#171A26] scroll-smooth absolute'>
+      <div className='max-h-[100%] h-[100%] w-[100vw] bg-[#171A26] scroll-smooth absolute'>
         <div className='relative max-h-[100%] h-[100%]'>
           <div
             className={`fixed w-full h-[100%]`}
             // {y !== 0 ? 100 : 90}
             // y * 2
             style={{
-              clipPath: `polygon(${
-                y !== 0 ? 100 : 90
-              }% 0, 100% 0%, 100% 100%, ${-y * 1001}% 100%)`,
+              clipPath: `polygon(${90 - y * 200}% 0, 100% 0%, 100% 100%, ${
+                -y * 1001
+              }% 100%)`,
             }}
           >
             <img
@@ -122,8 +119,9 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             animate={{ scale: 0.8 }}
+            transition={{ type: 'spring', ease: 'easeInOut' }}
             className='w-full flex flex-col bg-[#171A26] justify-center'
           >
             <Intro />
@@ -131,17 +129,21 @@ export default function Home() {
           <Skills />
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
-            className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            animate={{ scale: 0.8 }}
+            transition={{ type: 'spring', ease: 'easeInOut' }}
+            className='w-full  flex flex-col justify-center align-middle mt-36 text-justify'
           >
             <Bio y={y} />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
-            className='snap-center w-full flex flex-col justify-center mt-36 text-justify align-middle'
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            animate={{ scale: 0.8 }}
+            transition={{ type: 'spring', ease: 'easeInOut' }}
+            className='w-full flex flex-col justify-center mt-36 text-justify align-middle'
           >
             <Projects />
           </motion.div>
@@ -149,8 +151,9 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
-            className='snap-center w-full flex flex-col justify-center mt-36 text-justify align-middle'
+            viewport={{ once: true }}
+            transition={{ type: 'spring', ease: 'easeInOut' }}
+            className='w-full flex flex-col justify-center mt-36 text-justify align-middle'
           >
             <Blogs />
           </motion.div>

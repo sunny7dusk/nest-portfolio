@@ -145,8 +145,9 @@ export default function Skills({ y }) {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           animate={{ scale: 0.8 }}
+          transition={{ type: 'spring', ease: 'easeInOut' }}
           className='w-[50vw] self-center text-justify'
         >
           <span className='bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl'>

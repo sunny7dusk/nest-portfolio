@@ -1,3 +1,8 @@
+import { IconContext } from 'react-icons';
+import { AiFillGithub, AiFillInstagram } from 'react-icons/ai/index';
+import { FaLinkedin } from 'react-icons/fa/index';
+import { CgFileDocument } from 'react-icons/cg/index';
+
 export default function Contact({ y }) {
   return (
     <>
@@ -7,60 +12,54 @@ export default function Contact({ y }) {
             Interested in working together?
           </span>
           <br />
-          <div className='grid grid-cols-4 mt-8 gap-5'>
-            <a
-              href='https://github.com/sunny7dusk'
-              className='flex flex-row align-middle justify-center'
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <img
-                src='/assets/icons8-github-64.webp'
-                width='60'
-                alt='github profile'
-                title='My GitHub Profile'
-              />
-            </a>
-            <a
-              href='https://www.instagram.com/dark7storm/'
-              className='flex flex-row align-middle justify-center'
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <img
-                src='/assets/icons8-instagram-64.webp'
-                width='60'
-                alt='instagram profile'
-                title='My Instagram Profile'
-              />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/nathaniel-chai-48aab4135/'
-              className='flex flex-row align-middle justify-center'
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <img
-                src='/assets/icons8-linkedin-64.webp'
-                width='60'
-                alt='linkedin profile'
-                title='My LinkedIn Profile'
-              />
-            </a>
-            <a
-              href='https://drive.google.com/file/d/1sFEicIs97ggVChxU8RDbVUpwEtk15MNB/view?usp=sharing'
-              className='flex flex-row align-middle justify-center'
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <img
-                src='/assets/icons8-resume-64.webp'
-                width='60'
-                alt='resume'
-                title='My resume'
-              />
-            </a>
-          </div>
+          <IconContext.Provider value={{ color: 'grey' }}>
+            <div className='grid grid-cols-4 mt-8 gap-5'>
+              <a
+                href='https://github.com/sunny7dusk'
+                className='flex flex-row align-middle justify-center'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <AiFillGithub
+                  alt='github profile'
+                  title='My GitHub Profile'
+                  size={64}
+                />
+              </a>
+              <a
+                href='https://www.instagram.com/dark7storm/'
+                className='flex flex-row align-middle justify-center'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <AiFillInstagram
+                  alt='instagram profile'
+                  title='My Instagram Profile'
+                  size={64}
+                />
+              </a>
+              <a
+                href='https://www.linkedin.com/in/nathaniel-chai-48aab4135/'
+                className='flex flex-row align-middle justify-center'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <FaLinkedin
+                  alt='linkedin profile'
+                  title='My LinkedIn Profile'
+                  size={64}
+                />
+              </a>
+              <a
+                href='https://drive.google.com/file/d/1sFEicIs97ggVChxU8RDbVUpwEtk15MNB/view?usp=sharing'
+                className='flex flex-row align-middle justify-center'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <CgFileDocument alt='resume' title='My resume' size={64} />
+              </a>
+            </div>
+          </IconContext.Provider>
         </div>
       </div>
     </>
