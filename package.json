@@ -8,9 +8,13 @@
     "build": "cross-env NODE_ENV=production next build",
     "start": "next start",
     "sanity": "cd studio && sanity start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^12.1.6",
     "@portabletext/react": "^1.0.6",
     "@react-spring/parallax": "^9.4.4",
     "@sanity/image-url": "^1.0.1",

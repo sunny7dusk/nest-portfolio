@@ -6,6 +6,7 @@ import Projects from './project';
 import Bio from './bio';
 import Contact from './contacts';
 import Blogs from './blogs';
+
 import { useEffect, useState } from 'react';
 import { motion, useViewportScroll } from 'framer-motion';
 
@@ -146,9 +147,8 @@ export default function Home() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
-            animate={{ scale: 0.8 }}
           >
             <Contact />
           </motion.div>
