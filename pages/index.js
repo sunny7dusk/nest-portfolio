@@ -124,6 +124,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false }}
             animate={{ scale: 0.8 }}
+            className='w-full flex flex-col bg-[#171A26] justify-center'
           >
             <Intro />
           </motion.div>
@@ -133,6 +134,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false }}
             animate={{ scale: 0.8 }}
+            className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'
           >
             <Bio y={y} />
           </motion.div>
@@ -141,17 +143,22 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false }}
             animate={{ scale: 0.8 }}
+            className='snap-center w-full flex flex-col justify-center mt-36 text-justify align-middle'
           >
             <Projects />
-            <Blogs />
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false }}
+            animate={{ scale: 0.8 }}
+            className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'
           >
-            <Contact />
+            <Blogs />
           </motion.div>
+
+          <Contact />
         </div>
       </div>
     </>
