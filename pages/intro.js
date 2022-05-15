@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Intro({ y, prevY }) {
   // console.log('y = ' + y);
   // console.log('prevY = ' + prevY);

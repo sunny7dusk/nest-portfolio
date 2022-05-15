@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 export default function Title({ y }) {
   // useEffect(() => {
   //   console.log(y);

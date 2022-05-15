@@ -7,7 +7,7 @@ export default function Blogs({ y }) {
             Wanna see what I've been up to? Check out my{' '}
             <a
               href='/blog'
-              className=' underline decoration-solid decoration-[#A3767D]/90 underline-offset-8 hover:font-bold font-normal animation ease-in-out tracking-wide'
+              className=' underline decoration-solid decoration-[#A3767D]/90 underline-offset-8 hover:font-bold font-normal animation ease-in-out'
             >
               blog
             </a>{' '}

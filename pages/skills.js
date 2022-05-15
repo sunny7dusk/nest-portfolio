@@ -1,5 +1,4 @@
 import styles from '../styles/Skills.module.css';
-import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 import { motion } from 'framer-motion';
 

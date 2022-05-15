@@ -6,7 +6,6 @@ import Projects from './project';
 import Bio from './bio';
 import Contact from './contacts';
 import Blogs from './blogs';
-import Github from './github';
 import { useEffect, useState } from 'react';
 import { motion, useViewportScroll } from 'framer-motion';
 
@@ -56,7 +55,7 @@ export default function Home() {
         <title>Nate's Portfolio</title>
         <link rel='icon' href='/favicon.ico' />
         <meta
-          property='description'
+          name='description'
           content='Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind.'
         />
         <link rel='canonical' href='/Portfolio' />
@@ -125,9 +124,9 @@ export default function Home() {
             viewport={{ once: false }}
             animate={{ scale: 0.8 }}
           >
-            <Intro y={y} />
+            <Intro />
           </motion.div>
-          <Skills y={y} />
+          <Skills />
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -142,8 +141,8 @@ export default function Home() {
             viewport={{ once: false }}
             animate={{ scale: 0.8 }}
           >
-            <Projects y={y} />
-            <Blogs y={y} />
+            <Projects />
+            <Blogs />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -151,7 +150,7 @@ export default function Home() {
             viewport={{ once: false }}
             animate={{ scale: 0.8 }}
           >
-            <Contact y={y} />
+            <Contact />
           </motion.div>
         </div>
       </div>
