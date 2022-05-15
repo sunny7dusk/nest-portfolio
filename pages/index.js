@@ -6,37 +6,47 @@ import Projects from './project';
 import Bio from './bio';
 import Contact from './contacts';
 import Blogs from './blogs';
+import Github from './github';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { motion, useViewportScroll } from 'framer-motion';
 
 export default function Home() {
+  const { scrollYProgress } = useViewportScroll();
+  // useEffect(() => {
+  //   console.log(scrollYProgress);
+  // }, [scrollYProgress]);
   const [y, setY] = useState(0);
-  const [prevY, setPrevY] = useState(y);
 
   useEffect(() => {
-    let handleScroll = () => {
-      setY((curr) => {
-        setPrevY(curr);
-        return window.scrollY;
-      });
-    };
+    scrollYProgress.onChange((v) => setY(v));
+  }, [scrollYProgress]);
+  // const [scrollYProgress, setScrollYProgress] = useState(0);
+  // const [prevY, setPrevY] = useState(0);
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+  // useEffect(() => {
+  //   let handleScroll = () => {
+  //     setScrollYProgress((curr) => {
+  //       setPrevY(curr);
+  //       return window.scrollY;
+  //     });
+  //   };
 
-    let changingHeight = () => {
-      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-      let vh = window.innerHeight * 0.01;
-      // Then we set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    };
+  //   window.addEventListener('scroll', handleScroll, { passive: true });
 
-    window.addEventListener('resize', changingHeight);
+  //   let changingHeight = () => {
+  //     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  //     let vh = window.innerHeight * 0.01;
+  //     // Then we set the value in the --vh custom property to the root of the document
+  //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+  //   };
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', changingHeight);
-    };
-  }, []);
+  //   window.addEventListener('resize', changingHeight);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //     window.removeEventListener('resize', changingHeight);
+  //   };
+  // }, []);
 
   const previewImg = 'https://i.imgur.com/YWr7FcG.jpg';
 
@@ -72,6 +82,11 @@ export default function Home() {
         <meta name='twitter:image' content={previewImg} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta property='image' content={previewImg} />
+        <script
+          src='https://unpkg.com/github-devprofile@2/dist/card.component.min.mjs'
+          type='module'
+        ></script>
+
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
@@ -88,20 +103,13 @@ export default function Home() {
           <div
             className={`fixed w-full h-[100%]`}
             // {y !== 0 ? 100 : 90}
+            // y * 2
             style={{
               clipPath: `polygon(${
                 y !== 0 ? 100 : 90
-              }% 0, 100% 0%, 100% 100%, ${y * 2}% 100%)`,
+              }% 0, 100% 0%, 100% 100%, ${-y * 1000}% 100%)`,
             }}
           >
-            {/* <Image
-              src={'/assets/dark7storm_full.webp'}
-              layout='fill'
-              objectFit='cover'
-              objectPosition={'65%'}
-              quality={100}
-              alt='background image'
-            /> */}
             <img
               src={'/assets/dark7storm_full.webp'}
               width={1980}
@@ -110,13 +118,41 @@ export default function Home() {
             />
             <div className='h-[100%] bg-black opacity-25'></div>
           </div>
-          <Title y={y} prevY={prevY} />
-          <Intro y={y} />
+          <Title y={y} prevY={y} />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            animate={{ scale: 0.8 }}
+          >
+            <Intro y={y} />
+          </motion.div>
           <Skills y={y} />
-          <Bio y={y} />
-          <Projects y={y} />
-          <Blogs y={y} />
-          <Contact y={y} />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            animate={{ scale: 0.8 }}
+          >
+            <Bio y={y} />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            animate={{ scale: 0.8 }}
+          >
+            <Projects y={y} />
+            <Blogs y={y} />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            animate={{ scale: 0.8 }}
+          >
+            <Contact y={y} />
+          </motion.div>
         </div>
       </div>
     </>

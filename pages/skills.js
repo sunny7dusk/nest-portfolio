@@ -1,6 +1,7 @@
 import styles from '../styles/Skills.module.css';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
+import { motion } from 'framer-motion';
 
 export default function Skills({ y }) {
   return (
@@ -142,12 +143,18 @@ export default function Skills({ y }) {
           </Marquee>
         </div>
 
-        <div className='w-[50vw] self-center text-justify'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          animate={{ scale: 0.8 }}
+          className='w-[50vw] self-center text-justify'
+        >
           <span className='bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl'>
             I'm always constantly learning new technologies to broaden my skill
             set! Here are some of the technologies I've been working with!
           </span>
-        </div>
+        </motion.div>
       </div>
     </>
   );

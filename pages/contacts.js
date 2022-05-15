@@ -6,7 +6,7 @@ export default function Contact({ y }) {
     <>
       <div className='snap-center w-[100vw] lg:px-[4rem] px-6 sm:px-10 flex flex-col justify-center align-middle pb-36 mt-44'>
         <div className='self-center w-[60vw]'>
-          <span className='bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-3xl lg:text-4xl 2xl:text-7xl'>
+          <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-3xl lg:text-4xl 2xl:text-7xl'>
             Interested in working together?
           </span>
           <br />
