@@ -7,7 +7,7 @@ export default function Projects({ y }) {
             Come take a look at{' '}
             <a
               href='/projects'
-              className=' underline decoration-solid decoration-[#F2CC85]/70 underline-offset-8 hover:font-bold font-normal animation ease-in-out'
+              className=' underline decoration-solid decoration-[#F2CC85]/70 underline-offset-8 hover:font-bold font-normal animation ease-in-out tracking-wide'
             >
               projects
             </a>{' '}

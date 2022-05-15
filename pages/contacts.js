@@ -18,7 +18,7 @@ export default function Contact({ y }) {
               rel='noreferrer noopener'
             >
               <img
-                src='/assets/github.webp'
+                src='/assets/icons8-github-64.webp'
                 width='60'
                 alt='github profile'
                 title='My GitHub Profile'
@@ -31,7 +31,7 @@ export default function Contact({ y }) {
               rel='noreferrer noopener'
             >
               <img
-                src='/assets/instagram.webp'
+                src='/assets/icons8-instagram-64.webp'
                 width='60'
                 alt='instagram profile'
                 title='My Instagram Profile'
@@ -44,7 +44,7 @@ export default function Contact({ y }) {
               rel='noreferrer noopener'
             >
               <img
-                src='/assets/linkedin.webp'
+                src='/assets/icons8-linkedin-64.webp'
                 width='60'
                 alt='linkedin profile'
                 title='My LinkedIn Profile'
@@ -57,7 +57,7 @@ export default function Contact({ y }) {
               rel='noreferrer noopener'
             >
               <img
-                src='/assets/resume-icon-.webp'
+                src='/assets/icons8-resume-64.webp'
                 width='60'
                 alt='resume'
                 title='My resume'
