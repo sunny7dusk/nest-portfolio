@@ -129,16 +129,31 @@ export default function Home() {
             <Intro />
           </motion.div>
           <Skills />
-          <div className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'
+          >
             <Bio y={y} />
-          </div>
-          <div className='snap-center w-full flex flex-col justify-center mt-36 text-justify align-middle'>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            className='snap-center w-full flex flex-col justify-center mt-36 text-justify align-middle'
+          >
             <Projects />
-          </div>
+          </motion.div>
 
-          <div className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            className='snap-center w-full flex flex-col justify-center mt-36 text-justify align-middle'
+          >
             <Blogs />
-          </div>
+          </motion.div>
 
           <Contact />
         </div>
