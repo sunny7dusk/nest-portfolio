@@ -8,6 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
+    "test": "sanity check",
     "build": "sanity build"
   },
   "keywords": [
@@ -28,7 +29,9 @@
     "sanity-plugin-markdown": "^2.1.1",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@sanity/cli": "^2.30.0"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:sunny7dusk/nest-portfolio.git"

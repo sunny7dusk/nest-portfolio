@@ -17,6 +17,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.isUnique().required(),
     },
     {
       name: 'author',
