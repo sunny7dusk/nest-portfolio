@@ -134,6 +134,8 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
   });
 
+  console.log(post);
+
   return {
     props: {
       preview,
@@ -144,11 +146,11 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
   const paths = await getClient().fetch(
-    groq`*[_type == "post" && slug.current == $slug.current]`
+    groq`*[_type == "post" && defined(slug.current)][].slug.current`
   );
 
   return {
-    paths: paths.map((slug) => ({ params: { slug } }))[0],
+    paths: paths.map((slug) => ({ params: { slug } })),
     fallback: false,
   };
 }
