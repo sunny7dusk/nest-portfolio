@@ -11,7 +11,14 @@ import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import { useEffect } from 'react';
+// import sanityClient from "@sanity/client"
+
+// // Sanity Client config for data fetch
+// export default sanityClient({
+//   projectId: "<YOUR_PROJECT_ID",
+//   dataset: "YOUR_PROJECT_DATASET",
+//   useCdn: true, // false if you want to ensure fresh data
+// })
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -38,6 +45,17 @@ export default function Post({ data, preview }) {
     initialData: data.post,
     enabled: preview && data.post?.slug,
   });
+
+  if (router.isFallback) {
+    return (
+      <>
+        <div className='w-[100vw] h-[100vh] flex flex-col align-middle justify-center text-center'>
+          <BeatLoader color='#e2e8f0' size={40} />
+          <span>If it takes a while to load, come back later!</span>
+        </div>
+      </>
+    );
+  }
 
   if (!router.isFallback && !data.post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -141,6 +159,7 @@ export async function getStaticProps({ params, preview = false }) {
       preview,
       data: { post },
     },
+    revalidate: 600,
   };
 }
 
@@ -151,6 +170,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   };
 }

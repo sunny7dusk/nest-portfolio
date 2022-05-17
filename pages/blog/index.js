@@ -11,7 +11,7 @@ export default function Post(props) {
   const { postdata, preview } = props;
   const [items, setItems] = useState([]);
   const post = [...postdata];
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
@@ -43,20 +43,20 @@ export default function Post(props) {
   const clickArticle = (slug, event) => {
     event.preventDefault();
     // console.log(slug);
-    setLoading(true);
+    // setLoading(true);
     router.push(`/blog/${slug.current}`);
   };
 
   const previewImg = 'https://i.imgur.com/YWr7FcG.jpg';
 
-  if (loading)
-    return (
-      <>
-        <div className='w-[100vw] h-[100vh] flex flex-col align-middle justify-center text-center'>
-          <BeatLoader color='#e2e8f0' size={40} />
-        </div>
-      </>
-    );
+  // if (loading)
+  //   return (
+  //     <>
+  //       <div className='w-[100vw] h-[100vh] flex flex-col align-middle justify-center text-center'>
+  //         <BeatLoader color='#e2e8f0' size={40} />
+  //       </div>
+  //     </>
+  //   );
 
   //   console.log(posts);
   return (
