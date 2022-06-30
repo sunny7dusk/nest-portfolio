@@ -8,8 +8,10 @@ html {
 }
 
 body {
-    background-color: #171A26;
-    -ms-overflow-style: none;  /* IE and Edge */
+  /* background: linear-gradient(90deg, rgba(23,26,38,1), rgba(46,61,89,1)); */
+  background: rgb(23,26,38); 
+
+  -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   /* height: 100%;
   width: 100%; */
