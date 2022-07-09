@@ -15,6 +15,7 @@ body {
   scrollbar-width: none;  /* Firefox */
   /* height: 100%;
   width: 100%; */
+  max-width: 100%;
 }
 
 body::-webkit-scrollbar {
