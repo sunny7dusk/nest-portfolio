@@ -114,7 +114,7 @@ export default function Post(props) {
             items.map((item) => (
               <article
                 key={item.slug.current}
-                className="p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] col-span-1 lg:col-span-2"
+                className="p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] col-span-1 lg:col-span-2 w-full"
               >
                 <a
                   onClick={(event) => clickArticle(item.slug, event)}
