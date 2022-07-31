@@ -17,66 +17,12 @@ export default function Home() {
   const [y, setY] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     scrollYProgress.onChange((v) => setY(v));
   }, [scrollYProgress]);
-
-  // const [vantaEffect, setVantaEffect] = useState(0);
-  // const myRef = useRef(null);
-  // useEffect(() => {
-  //   if (!vantaEffect) {
-  //     setVantaEffect(
-  //       NET({
-  //         el: myRef.current,
-  //         scale: 1.0,
-  //         scaleMobile: 1.0,
-  //         color: 0xcbd5e1,
-  //         backgroundColor: 0x171a26,
-  //       })
-  //     );
-  //   }
-  //   return () => {
-  //     if (vantaEffect) vantaEffect.destroy();
-  //   };
-  // }, [vantaEffect]);
-
-  // const vantaBody = {
-  //   el: 'body',
-  //   mouseControls: true,
-  //   touchControls: true,
-  //   gyroControls: false,
-  //   minHeight: 200.0,
-  //   minWidth: 200.0,
-  //   scale: 1.0,
-  //   scaleMobile: 1.0,
-  // };
-
-  // const [scrollYProgress, setScrollYProgress] = useState(0);
-  // const [prevY, setPrevY] = useState(0);
-
-  // useEffect(() => {
-  //   let handleScroll = () => {
-  //     setScrollYProgress((curr) => {
-  //       setPrevY(curr);
-  //       return window.scrollY;
-  //     });
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll, { passive: true });
-
-  //   let changingHeight = () => {
-  //     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-  //     let vh = window.innerHeight * 0.01;
-  //     // Then we set the value in the --vh custom property to the root of the document
-  //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  //   };
-
-  //   window.addEventListener('resize', changingHeight);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //     window.removeEventListener('resize', changingHeight);
-  //   };
-  // }, []);
 
   const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
