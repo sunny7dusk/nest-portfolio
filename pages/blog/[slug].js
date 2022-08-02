@@ -32,16 +32,15 @@ export default function Post({ data, preview }) {
   const remarkP = [remarkGfm, remarkMath];
   const rehypeP = [rehypeKatex];
   const router = useRouter();
-
-  if (data === undefined) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   const { data: post } = usePreviewSubscription(postQuery, {
     params: { slug: data.post?.slug },
     initialData: data.post,
     enabled: preview && data.post?.slug,
   });
+
+  if (data === undefined) {
+    return <ErrorPage statusCode={404} />;
+  }
 
   if (router.isFallback) {
     return (

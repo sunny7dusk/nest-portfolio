@@ -6,7 +6,7 @@ import Transition from "./transition";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleComplete = () => {
@@ -24,9 +24,8 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeStart", handleLoading);
       router.events.off("routeChangeComplete", handleComplete);
     };
-  });
+  }, []);
 
-  //
   return (
     <Transition>
       {loading ? <Loading /> : <Component {...pageProps} />}
