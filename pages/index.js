@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Nate's Portfolio</title>
+        <title>Nate&apos;s Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -77,7 +77,12 @@ export default function Home() {
       {/* bg-[#171A26]  */}
       <div className="max-h-[100%] h-[100%] w-[100vw] scroll-smooth absolute ">
         <div className="relative max-h-[100%] h-[100%]">
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            animate={{ opacity: 1 }}
+            transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
             className={`fixed w-full h-[100%]`}
             // {y !== 0 ? 100 : 90}
             // y * 2
@@ -92,9 +97,10 @@ export default function Home() {
               width={1980}
               height={1080}
               className="object-cover h-[100%] w-[100vw] object-[65%]"
+              key={"hero"}
             />
             <div className="h-[100%] bg-black opacity-25"></div>
-          </div>
+          </motion.div>
           <Title y={y} prevY={y} />
           {/* ref={myRef} */}
           <div>
@@ -105,6 +111,7 @@ export default function Home() {
               animate={{ scale: 0.8 }}
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full flex flex-col justify-center"
+              key={"intro"}
             >
               <Intro />
             </motion.div>
@@ -116,6 +123,7 @@ export default function Home() {
               animate={{ scale: 0.8 }}
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
+              key={"bio"}
             >
               <Bio y={y} />
             </motion.div>
@@ -126,6 +134,7 @@ export default function Home() {
               animate={{ scale: 0.8 }}
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
+              key={"projects"}
             >
               <Projects />
             </motion.div>
@@ -136,6 +145,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
+              key={"blogs"}
             >
               <Blogs />
             </motion.div>
@@ -147,11 +157,12 @@ export default function Home() {
               animate={{ scale: 0.8 }}
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full flex flex-col justify-center align-middle mt-36 text-justify"
+              key={"spotify"}
             >
               <SpotifyFavSong />
             </motion.div>
 
-            <Contact />
+            <Contact key={"contact"} />
           </div>
         </div>
       </div>

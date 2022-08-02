@@ -1,19 +1,15 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { getClient } from "@lib/sanity.server";
 
 import { groq } from "next-sanity";
 import { useEffect, useState } from "react";
 
-import { BeatLoader } from "react-spinners";
+import Link from "next/link";
 
 export default function Post(props) {
-  const { postdata, preview } = props;
+  const { postdata } = props;
   const [items, setItems] = useState([]);
   const post = [...postdata];
-  // const [loading, setLoading] = useState(false);
-
-  const router = useRouter();
 
   useEffect(() => {
     setItems((prev) => {
@@ -40,29 +36,12 @@ export default function Post(props) {
     console.log(post);
   };
 
-  const clickArticle = (slug, event) => {
-    event.preventDefault();
-    // console.log(slug);
-    // setLoading(true);
-    router.push(`/blog/${slug.current}`);
-  };
-
   const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
-  // if (loading)
-  //   return (
-  //     <>
-  //       <div className='w-[100vw] h-[100vh] flex flex-col align-middle justify-center text-center'>
-  //         <BeatLoader color='#e2e8f0' size={40} />
-  //       </div>
-  //     </>
-  //   );
-
-  //   console.log(posts);
   return (
     <>
       <Head>
-        <title>Nate's Blog</title>
+        <title>Nate&apos;s Blog</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="description"
@@ -98,7 +77,7 @@ export default function Post(props) {
       </Head>
       <div className="w-[100vw] flex flex-col align-middle justify-center mb-16">
         <span className="pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center">
-          Nate's Blog!
+          Nate&apos;s Blog!
         </span>
         <br />
         <div className="text-center">
@@ -116,31 +95,29 @@ export default function Post(props) {
                 key={item.slug.current}
                 className="p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] col-span-1 lg:col-span-2 w-full"
               >
-                <a
-                  onClick={(event) => clickArticle(item.slug, event)}
-                  href={`/`}
-                  className="flex flex-col justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90"
-                >
-                  <img
-                    src={item.imageUrl}
-                    className="object-contain self-center saturate-[0.8] h-[150px] lg:h-[250px]"
-                  />
-                  <div className="mt-12">
-                    {item.publishedAt && (
-                      <p className="text-xs font-medium text-gray-500">
-                        {item.publishedAt.split("T")[0]}
-                      </p>
-                    )}
-                    <h5 className="mt-2 text-xl font-bold text-white">
-                      {item.title}
-                    </h5>
-                    <div className="flex items-center justify-between mt-6">
-                      <p className="text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9]">
-                        {item.categories[0].title}
-                      </p>
+                <Link href={`/blog/${item.slug.current}`}>
+                  <div className="flex flex-col justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90">
+                    <img
+                      src={item.imageUrl}
+                      className="object-contain self-center saturate-[0.8] h-[150px] lg:h-[250px]"
+                    />
+                    <div className="mt-12">
+                      {item.publishedAt && (
+                        <p className="text-xs font-medium text-gray-500">
+                          {item.publishedAt.split("T")[0]}
+                        </p>
+                      )}
+                      <h5 className="mt-2 text-xl font-bold text-white">
+                        {item.title}
+                      </h5>
+                      <div className="flex items-center justify-between mt-6">
+                        <p className="text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9]">
+                          {item.categories[0].title}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </article>
             ))}
         </div>
@@ -173,7 +150,7 @@ const query = groq`
 }
 `;
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const post = await getClient(preview).fetch(query);
 
   //   if (allItems.length === 0) allItems.push(...post);

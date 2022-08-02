@@ -1,4 +1,4 @@
-export default function Intro({ y, prevY }) {
+export default function Intro() {
   return (
     <>
       <div className="self-center w-[50vw] ">

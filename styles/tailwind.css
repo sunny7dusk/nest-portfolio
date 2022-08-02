@@ -5,14 +5,15 @@
 html {
   /* height: 100%;
   width: 100%; */
+  scrollbar-width: none;
 }
 
 body {
   /* background: linear-gradient(90deg, rgba(23,26,38,1), rgba(46,61,89,1)); */
-  background: rgb(23,26,38); 
+  background: rgb(23, 26, 38);
 
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   /* height: 100%;
   width: 100%; */
   max-width: 100%;
@@ -21,5 +22,5 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
