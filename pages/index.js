@@ -16,9 +16,9 @@ export default function Home() {
   const { scrollYProgress } = useViewportScroll();
   const [y, setY] = useState(0);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   useEffect(() => {
     scrollYProgress.onChange((v) => setY(v));

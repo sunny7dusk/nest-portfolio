@@ -6,15 +6,23 @@ import Transition from "./transition";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleComplete = () => {
-      setLoading(!loading);
+      setLoading((prev) => {
+        console.log("complte");
+        console.log(!prev);
+        return !prev;
+      });
     };
 
     const handleLoading = () => {
-      setLoading(!loading);
+      setLoading((prev) => {
+        console.log("loading");
+        console.log(!prev);
+        return !prev;
+      });
     };
 
     router.events.on("routeChangeStart", handleLoading);
