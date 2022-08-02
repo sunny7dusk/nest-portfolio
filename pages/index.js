@@ -94,7 +94,7 @@ export default function Home() {
           style={{
             clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
             opacity: `${1 - y / 100}`,
-            transform: `translateX(${y < 200 ? y : 0}px)`,
+            transform: `translateX(${y}px)`,
           }}
         >
           <img
