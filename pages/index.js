@@ -8,14 +8,24 @@ import Contact from "./contacts";
 import Blogs from "./blogs";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import SpotifyFavSong from "./spotify";
 
+function useParallax(value, distance) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
+
 export default function Home() {
   // const picRef = useRef(null);
+
   const { scrollY } = useScroll();
   const [y, setY] = useState(0);
+
+  const ref = useRef(null);
+  const { scrollY: parral } = useScroll({ target: ref });
+  const parallax = useParallax(parral, 500);
+
   useEffect(() => {
     return scrollY.onChange((latest) => {
       setY(latest);
@@ -75,18 +85,23 @@ export default function Home() {
       {/* bg-[#171A26]  */}
       <div className="max-h-[100%] h-[100%] w-[100vw] scroll-smooth absolute ">
         <div className="relative max-h-[100%] h-[100%]">
+          <Title y={y} ref={ref} />
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            animate={{ opacity: 1 }}
+            // initial={{ opacity: 0 }}
+            // whileInView={{ opacity: 1 }}
+            // viewport={{ once: true }}
+            // animate={{ opacity: 1 }}
             transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
-            className={`fixed w-full h-[100%]`}
+            className={`w-full h-[100%] mb-24`}
+            // clipPath: `polygon(${
+            //   90 + (y / 100) * 10
+            // }% 0, 100% 0%, 100% 100%, ${y <= 100 ? y : 100}% 100%)`
             style={{
-              clipPath: `polygon(${
-                90 + (y / 100) * 10
-              }% 0, 100% 0%, 100% 100%, ${y <= 100 ? y : 100}% 100%)`,
+              clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
+              opacity: `${1 - y / 100}`,
+              transform: `translateX(${y}px)`,
             }}
+            ref={ref}
           >
             <img
               src={"/assets/dark7storm_full.webp"}
@@ -96,7 +111,7 @@ export default function Home() {
             />
             <div className="h-[100%] bg-black opacity-25"></div>
           </motion.div>
-          <Title y={y} />
+
           {/* ref={myRef} */}
           <div>
             <motion.div
@@ -107,6 +122,7 @@ export default function Home() {
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full flex flex-col justify-center"
               key={"intro"}
+              style={{ parallax }}
             >
               <Intro />
             </motion.div>
