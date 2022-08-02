@@ -1,4 +1,4 @@
-export default function Title({ y, ref }) {
+export default function Title({ y }) {
   return (
     <>
       {/* <div
@@ -12,7 +12,6 @@ export default function Title({ y, ref }) {
         <h1 className='absolute'>lmao</h1>
       </div> */}
       <div
-        ref={ref}
         style={{ opacity: `${1 - y / 400}`, transform: `translateX(${y}px)` }}
         className={`mb-10 fixed snap-center w-full h-[100%]  flex flex-col lg:px-[4rem] px-6 sm:px-10 align-top justify-center animate ease-in-out `}
       >

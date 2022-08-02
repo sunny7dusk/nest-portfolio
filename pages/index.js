@@ -22,10 +22,6 @@ export default function Home() {
   const { scrollY } = useScroll();
   const [y, setY] = useState(0);
 
-  const ref = useRef(null);
-  const { scrollY: parral } = useScroll({ target: ref });
-  const parallax = useParallax(parral, 500);
-
   useEffect(() => {
     return scrollY.onChange((latest) => {
       setY(latest);
@@ -85,7 +81,7 @@ export default function Home() {
       {/* bg-[#171A26]  */}
       <div className="max-h-[100%] h-[100%] w-[100vw] scroll-smooth absolute ">
         <div className="relative max-h-[100%] h-[100%]">
-          <Title y={y} ref={ref} />
+          <Title y={y} />
           <motion.div
             // initial={{ opacity: 0 }}
             // whileInView={{ opacity: 1 }}
@@ -101,7 +97,6 @@ export default function Home() {
               opacity: `${1 - y / 100}`,
               transform: `translateX(${y}px)`,
             }}
-            ref={ref}
           >
             <img
               src={"/assets/dark7storm_full.webp"}
@@ -122,7 +117,6 @@ export default function Home() {
               transition={{ type: "spring", ease: "easeInOut" }}
               className="w-full flex flex-col justify-center"
               key={"intro"}
-              style={{ parallax }}
             >
               <Intro />
             </motion.div>
