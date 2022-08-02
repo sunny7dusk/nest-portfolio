@@ -104,7 +104,7 @@ export default function Home() {
               height={1080}
               className="object-cover h-[100%] w-[100vw] object-[65%]"
             />
-            <div className="h-[100%] bg-black opacity-25"></div>
+            {/* <div className="h-[100%] bg-black opacity-25"></div> */}
           </motion.div>
 
           {/* ref={myRef} */}

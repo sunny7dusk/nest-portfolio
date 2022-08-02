@@ -1,16 +1,6 @@
 export default function Title({ y }) {
   return (
     <>
-      {/* <div
-        className={`gird grid-cols-3 text-white self-start ${
-          y >= -0.1 ? 'none' : 'static'
-        }`}
-        style={{ opacity: `${1 - -y * 5}` }}
-      >
-        <h1 className='absolute'>lmao</h1>
-        <h1 className='absolute'>lmao</h1>
-        <h1 className='absolute'>lmao</h1>
-      </div> */}
       <div
         style={{ opacity: `${1 - y / 400}`, transform: `translateX(${y}px)` }}
         className={`mb-10 fixed snap-center w-full h-[100%]  flex flex-col lg:px-[4rem] px-6 sm:px-10 align-top justify-center animate ease-in-out `}
