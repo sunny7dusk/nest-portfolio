@@ -80,95 +80,93 @@ export default function Home() {
       </Head>
       {/* bg-[#171A26]  */}
       <div className="max-h-[100%] h-[100%] w-[100vw] scroll-smooth absolute ">
-        <div className="relative max-h-[100%] h-[100%]">
-          <Title y={y} />
+        <Title y={y} />
+        <motion.div
+          // initial={{ opacity: 0 }}
+          // whileInView={{ opacity: 1 }}
+          // viewport={{ once: true }}
+          // animate={{ opacity: 1 }}
+          transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
+          className={`w-full h-[100%] mb-24 overflow-hidden`}
+          // clipPath: `polygon(${
+          //   90 + (y / 100) * 10
+          // }% 0, 100% 0%, 100% 100%, ${y <= 100 ? y : 100}% 100%)`
+          style={{
+            clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
+            opacity: `${1 - y / 100}`,
+            transform: `translateX(${y}px)`,
+          }}
+        >
+          <img
+            src={"/assets/dark7storm_full.webp"}
+            width={1980}
+            height={1080}
+            className="object-cover h-[100%] w-[100vw] object-[65%]"
+          />
+          {/* <div className="h-[100%] bg-black opacity-25"></div> */}
+        </motion.div>
+
+        {/* ref={myRef} */}
+        <div>
           <motion.div
-            // initial={{ opacity: 0 }}
-            // whileInView={{ opacity: 1 }}
-            // viewport={{ once: true }}
-            // animate={{ opacity: 1 }}
-            transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
-            className={`w-full h-[100%] mb-24`}
-            // clipPath: `polygon(${
-            //   90 + (y / 100) * 10
-            // }% 0, 100% 0%, 100% 100%, ${y <= 100 ? y : 100}% 100%)`
-            style={{
-              clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
-              opacity: `${1 - y / 100}`,
-              transform: `translateX(${y}px)`,
-            }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            animate={{ scale: 0.8 }}
+            transition={{ type: "spring", ease: "easeInOut" }}
+            className="w-full flex flex-col justify-center"
+            key={"intro"}
           >
-            <img
-              src={"/assets/dark7storm_full.webp"}
-              width={1980}
-              height={1080}
-              className="object-cover h-[100%] w-[100vw] object-[65%]"
-            />
-            {/* <div className="h-[100%] bg-black opacity-25"></div> */}
+            <Intro />
+          </motion.div>
+          <Skills />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            animate={{ scale: 0.8 }}
+            transition={{ type: "spring", ease: "easeInOut" }}
+            className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
+            key={"bio"}
+          >
+            <Bio />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            animate={{ scale: 0.8 }}
+            transition={{ type: "spring", ease: "easeInOut" }}
+            className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
+            key={"projects"}
+          >
+            <Projects />
           </motion.div>
 
-          {/* ref={myRef} */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              animate={{ scale: 0.8 }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-              className="w-full flex flex-col justify-center"
-              key={"intro"}
-            >
-              <Intro />
-            </motion.div>
-            <Skills />
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              animate={{ scale: 0.8 }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-              className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
-              key={"bio"}
-            >
-              <Bio />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              animate={{ scale: 0.8 }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-              className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
-              key={"projects"}
-            >
-              <Projects />
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", ease: "easeInOut" }}
+            className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
+            key={"blogs"}
+          >
+            <Blogs />
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-              className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
-              key={"blogs"}
-            >
-              <Blogs />
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            animate={{ scale: 0.8 }}
+            transition={{ type: "spring", ease: "easeInOut" }}
+            className="w-full flex flex-col justify-center align-middle mt-36 text-justify"
+            key={"spotify"}
+          >
+            <SpotifyFavSong />
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              animate={{ scale: 0.8 }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-              className="w-full flex flex-col justify-center align-middle mt-36 text-justify"
-              key={"spotify"}
-            >
-              <SpotifyFavSong />
-            </motion.div>
-
-            <Contact key={"contact"} />
-          </div>
+          <Contact key={"contact"} />
         </div>
       </div>
     </>
