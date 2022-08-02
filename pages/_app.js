@@ -6,7 +6,8 @@ import Transition from "./transition";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
+  // TODO change it back
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleComplete = () => {

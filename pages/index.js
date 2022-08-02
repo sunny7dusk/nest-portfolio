@@ -7,22 +7,20 @@ import Bio from "./bio";
 import Contact from "./contacts";
 import Blogs from "./blogs";
 
-import { useEffect, useState } from "react";
-import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 
 import SpotifyFavSong from "./spotify";
 
 export default function Home() {
-  const { scrollYProgress } = useViewportScroll();
+  // const picRef = useRef(null);
+  const { scrollY } = useScroll();
   const [y, setY] = useState(0);
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
-
   useEffect(() => {
-    scrollYProgress.onChange((v) => setY(v));
-  }, [scrollYProgress]);
+    return scrollY.onChange((latest) => {
+      setY(latest);
+    });
+  }, []);
 
   const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
@@ -84,12 +82,10 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
             className={`fixed w-full h-[100%]`}
-            // {y !== 0 ? 100 : 90}
-            // y * 2
             style={{
-              clipPath: `polygon(${90 - y * 200}% 0, 100% 0%, 100% 100%, ${
-                -y * 1001
-              }% 100%)`,
+              clipPath: `polygon(${
+                90 + (y / 100) * 10
+              }% 0, 100% 0%, 100% 100%, ${y <= 100 ? y : 100}% 100%)`,
             }}
           >
             <img
@@ -97,11 +93,10 @@ export default function Home() {
               width={1980}
               height={1080}
               className="object-cover h-[100%] w-[100vw] object-[65%]"
-              key={"hero"}
             />
             <div className="h-[100%] bg-black opacity-25"></div>
           </motion.div>
-          <Title y={y} prevY={y} />
+          <Title y={y} />
           {/* ref={myRef} */}
           <div>
             <motion.div
@@ -125,7 +120,7 @@ export default function Home() {
               className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
               key={"bio"}
             >
-              <Bio y={y} />
+              <Bio />
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
