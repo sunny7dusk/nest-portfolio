@@ -4,7 +4,7 @@ export default function Title({ y }) {
       <div
         style={{
           opacity: `${1 - y / 400}`,
-          transform: `translateX(${y < 200 ? y : 0}px)`,
+          translate: `${y}px`,
         }}
         className={`mb-10 fixed snap-center w-full h-[100%] overflow-hidden flex flex-col lg:px-[4rem] px-6 sm:px-10 align-top justify-center animate ease-in-out `}
       >
