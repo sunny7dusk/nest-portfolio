@@ -7,7 +7,7 @@ export default function Projects() {
         <span className="decoration-solid bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Come take a look at{" "}
           <Link href="/projects" prefetch>
-            <span className=" underline decoration-solid decoration-[#F2CC85]/70 underline-offset-8 hover:font-bold font-normal animation ease-in-out">
+            <span className="underline decoration-solid decoration-[#F2CC85]/70 underline-offset-8 hover:font-bold font-normal animation ease-in-out cursor-pointer">
               projects
             </span>
           </Link>{" "}
