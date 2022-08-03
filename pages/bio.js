@@ -63,7 +63,7 @@ export default function Bio() {
             </td>
           </tr>
           <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4">2022 (Upcoming)</td>
+            <td className="p-2 sm:p-4">2022</td>
             <td className="p-2 sm:p-4">
               Software Engineering Intern (React components team),{" "}
               <a
