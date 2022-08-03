@@ -24,7 +24,11 @@ const postQuery = groq`
       title
     },
     "slug": slug.current,
-    excerpt
+    excerpt,
+    "author": author->{
+      name
+    },
+    publishedAt
   }
 `;
 
@@ -56,7 +60,8 @@ export default function Post({ data, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const { title, mainImage, body, excerpt } = post;
+  const { title, mainImage, body, excerpt, author, publishedAt, categories } =
+    post;
 
   const previewImg = urlFor(mainImage).url();
 
@@ -99,44 +104,60 @@ export default function Post({ data, preview }) {
           rel="stylesheet"
         />
       </Head>
-      <article className="w-[100vw] flex flex-col align-middle justify-center">
-        <span className="pt-8 pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center">
-          {title}
-        </span>
-        {mainImage && (
-          <figure className="w-[70vw] text-center self-center flex flex-col align-middle justify-center">
-            <img
-              src={urlFor(mainImage).url()}
-              alt="image"
-              title={title}
-              className=" rounded-lg self-center m-0"
-            />
-          </figure>
-        )}
-        <ReactMarkdown
-          children={body}
-          className="prose prose-stone lg:prose-xl w-[90vw] m-8 self-center bg-gray-100 rounded-lg p-8"
-          remarkPlugins={remarkP}
-          rehypePlugins={rehypeP}
-          components={{
-            code({ inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, "")}
-                  style={a11yDark}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
+      <article className="w-[100vw] grid grid-cols-7 lg:grid-cols-5 place-content-stretch pb-8">
+        <div className="col-span-1"></div>
+        <div className="grid grid-cols-3 col-span-5 lg:col-span-3 border-dashed border-gray-100">
+          <h1 className="col-span-3 pt-8 lg:pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-wide text-center">
+            {title}
+          </h1>
+          <div className="col-span-3 pt-8 pb-8 ease-in-out duration-300 tracking-wide text-center text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-100">
+            By{" "}
+            <span className="bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-clip-text text-transparent">
+              {author.name}
+            </span>{" "}
+            published at{" "}
+            <span className="bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-clip-text text-transparent">
+              {publishedAt.split("T")[0]}
+            </span>{" "}
+          </div>
+          {mainImage && (
+            <>
+              <figure className="col-span-3 text-center self-center flex flex-col align-middle justify-center">
+                <img
+                  src={urlFor(mainImage).url()}
+                  alt="image"
+                  title={title}
+                  className="rounded-lg self-center m-0"
                 />
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        />
+              </figure>
+            </>
+          )}
+          <ReactMarkdown
+            children={body}
+            className="max-w-none prose prose-stone lg:prose-xl bg-gray-100 rounded-lg p-8 mt-8 col-span-5 lg:col-span-3"
+            remarkPlugins={remarkP}
+            rehypePlugins={rehypeP}
+            components={{
+              code({ inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, "")}
+                    style={a11yDark}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                  />
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          />
+        </div>
+        <div className="col-span-1"></div>
       </article>
     </>
   );
@@ -158,7 +179,7 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
   const paths = await getClient().fetch(
-    groq`*[_type == "post" && defined(slug.current)][].slug.current`
+    groq`*[_type == "post" && defined(author) &&  defined(slug.current)][].slug.current`
   );
 
   return {
