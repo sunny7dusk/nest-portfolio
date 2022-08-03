@@ -105,24 +105,45 @@ export default function Home() {
             </span>
           </motion.div>
 
-          <motion.div
-            transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
-            className={`w-full fixed h-[100%] overflow-hidden`}
-            style={{
-              clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
-              opacity: `${1 - y / 100}`,
-              translateX: `${currInnerWidth >= 640 ? y : 0}px`,
-              translateY: `${currInnerWidth >= 640 ? -y : 0}px`,
-            }}
-          >
-            <img
-              src={"/assets/dark7storm_full.webp"}
-              width={1980}
-              height={1080}
-              className="object-cover h-[100%] w-[100vw] object-[65%]"
-            />
-            {/* <div className="h-[100%] bg-black opacity-25"></div> */}
-          </motion.div>
+          {currInnerWidth >= 640 ? (
+            <motion.div
+              transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
+              className={`w-full fixed h-[100%] overflow-hidden`}
+              style={{
+                clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
+                opacity: `${1 - y / 100}`,
+                translateX: `${currInnerWidth >= 640 ? y : 0}px`,
+                translateY: `${currInnerWidth >= 640 ? -y : 0}px`,
+              }}
+            >
+              <img
+                src={"/assets/dark7storm_full.webp"}
+                width={1980}
+                height={1080}
+                className="object-cover h-[100%] w-[100vw] object-[65%]"
+              />
+              {/* <div className="h-[100%] bg-black opacity-25"></div> */}
+            </motion.div>
+          ) : (
+            y < 200 && (
+              <motion.div
+                transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
+                className={`w-full fixed h-[100%] overflow-hidden`}
+                style={{
+                  clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
+                  opacity: `${1 - y / 100}`,
+                }}
+              >
+                <img
+                  src={"/assets/dark7storm_full.webp"}
+                  width={1980}
+                  height={1080}
+                  className="object-cover h-[100%] w-[100vw] object-[65%]"
+                />
+                {/* <div className="h-[100%] bg-black opacity-25"></div> */}
+              </motion.div>
+            )
+          )}
         </div>
 
         <Player
