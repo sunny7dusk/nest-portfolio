@@ -3,7 +3,7 @@ import { AiFillGithub, AiFillInstagram } from "react-icons/ai/index";
 import { FaLinkedin } from "react-icons/fa/index";
 import { CgFileDocument } from "react-icons/cg/index";
 
-export default function Contact() {
+export default function Contact({ windowWidth }) {
   return (
     <>
       <div className="snap-center w-[100vw] lg:px-[4rem] px-6 sm:px-10 flex flex-col justify-center align-middle pb-36 mt-44">
@@ -23,7 +23,7 @@ export default function Contact() {
                 <AiFillGithub
                   alt="github profile"
                   title="My GitHub Profile"
-                  size={64}
+                  size={windowWidth >= 640 ? 64 : 32}
                 />
               </a>
               <a
@@ -35,7 +35,7 @@ export default function Contact() {
                 <AiFillInstagram
                   alt="instagram profile"
                   title="My Instagram Profile"
-                  size={64}
+                  size={windowWidth >= 640 ? 64 : 32}
                 />
               </a>
               <a
@@ -47,7 +47,7 @@ export default function Contact() {
                 <FaLinkedin
                   alt="linkedin profile"
                   title="My LinkedIn Profile"
-                  size={64}
+                  size={windowWidth >= 640 ? 64 : 32}
                 />
               </a>
               <a
@@ -56,7 +56,11 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <CgFileDocument alt="resume" title="My resume" size={64} />
+                <CgFileDocument
+                  alt="resume"
+                  title="My resume"
+                  size={windowWidth >= 640 ? 64 : 32}
+                />
               </a>
             </div>
           </IconContext.Provider>

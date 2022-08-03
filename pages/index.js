@@ -188,7 +188,7 @@ export default function Home() {
             <SpotifyFavSong />
           </motion.div> */}
 
-          <Contact key={"contact"} />
+          <Contact key={"contact"} windowWidth={currInnerWidth} />
         </div>
       </div>
     </>
