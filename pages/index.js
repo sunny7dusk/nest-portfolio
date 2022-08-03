@@ -117,8 +117,8 @@ export default function Home() {
               translateY: `${-y}px`,
             }}
           >
-            <Image
-              src={heroImage}
+            <img
+              src={"/assets/dark7storm_full.webp"}
               width={1980}
               height={1080}
               className="object-cover h-[100%] w-[100vw] object-[65%]"
