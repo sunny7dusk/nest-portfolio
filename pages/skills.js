@@ -1,6 +1,19 @@
 import styles from "../styles/Skills.module.css";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import html5 from "../public/assets/html-5.webp";
+import css from "../public/assets/css.webp";
+import firebase from "../public/assets/icons8-google-firebase-console-96.webp";
+import flutter from "../public/assets/icons8-flutter-96.webp";
+import python from "../public/assets/icons8-python-96.webp";
+import java from "../public/assets/icons8-java-96.webp";
+import c from "../public/assets/icons8-c-programming-96.webp";
+import react from "../public/assets/icons8-react-native-96.webp";
+import angular from "../public/assets/angular.svg";
+import js from "../public/assets/js-format.webp";
+import node from "../public/assets/icons8-nodejs-96.webp";
+import vue from "../public/assets/vue.png";
 
 export default function Skills() {
   return (
@@ -12,60 +25,30 @@ export default function Skills() {
             gradient={false}
             speed={12 * 10}
           >
-            <img src="/assets/html-5.webp" alt="" width={50} height={50} />
-            <img src="/assets/css.webp" alt="" width={50} height={50} />
-            <img
-              src="/assets/icons8-google-firebase-console-96.webp"
-              alt=""
+            <Image src={html5} alt="html5" width={50} height={50} />
+            <Image src={css} alt="css" width={50} height={50} />
+            <Image
+              src={firebase}
+              alt="firebase"
               width={50}
               height={50}
               title=""
             />
-            <img
-              src="/assets/icons8-flutter-96.webp"
-              alt=""
+            <Image
+              src={flutter}
+              alt="flutter"
               width={50}
               height={50}
               title=""
             />
-            <img
-              src="/assets/icons8-python-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img src="/assets/angular.svg" alt="" width={50} height={50} />
-            <img
-              src="/assets/icons8-java-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img src="/assets/js-format.webp" alt="" width={50} height={50} />
-            <img
-              src="/assets/icons8-c-programming-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img
-              src="/assets/icons8-nodejs-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img
-              src="/assets/icons8-react-native-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img src="/assets/vue.png" alt="" width={50} height={50} />
+            <Image src={python} alt="python" width={50} height={50} title="" />
+            <Image src={angular} alt="angular" width={50} height={50} />
+            <Image src={java} alt="java" width={50} height={50} title="" />
+            <Image src={js} alt="js" width={50} height={50} />
+            <Image src={c} alt="c" width={50} height={50} title="" />
+            <Image src={node} alt="node" width={50} height={50} title="" />
+            <Image src={react} alt="react" width={50} height={50} title="" />
+            <Image src={vue} alt="vue" width={50} height={50} />
           </Marquee>
         </div>
 
@@ -75,30 +58,24 @@ export default function Skills() {
             gradient={false}
             speed={12 * 15}
           >
-            <img src="/assets/html-5.webp" alt="" width={50} height={50} />
-            <img src="/assets/css.webp" alt="" width={50} height={50} />
-            <img
-              src="/assets/icons8-google-firebase-console-96.webp"
-              alt=""
+            <Image src={html5} alt="html5" width={50} height={50} />
+            <Image src={css} alt="css" width={50} height={50} />
+            <Image
+              src={firebase}
+              alt="firebase"
               width={50}
               height={50}
               title=""
             />
-            <img
-              src="/assets/icons8-flutter-96.webp"
-              alt=""
+            <Image
+              src={flutter}
+              alt="flutter"
               width={50}
               height={50}
               title=""
             />
-            <img
-              src="/assets/icons8-python-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img src="/assets/angular.svg" alt="" width={50} height={50} />
+            <Image src={python} alt="python" width={50} height={50} title="" />
+            <Image src={angular} alt="angular" width={50} height={50} />
           </Marquee>
           <Marquee
             className={`h-[100px] mb-3 self-center ` + styles.logos}
@@ -106,36 +83,12 @@ export default function Skills() {
             speed={12 * 15}
             delay={1}
           >
-            <img
-              src="/assets/icons8-java-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img src="/assets/js-format.webp" alt="" width={50} height={50} />
-            <img
-              src="/assets/icons8-c-programming-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img
-              src="/assets/icons8-nodejs-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img
-              src="/assets/icons8-react-native-96.webp"
-              alt=""
-              width={50}
-              height={50}
-              title=""
-            />
-            <img src="/assets/vue.png" alt="" width={50} height={50} />
+            <Image src={java} alt="java" width={50} height={50} title="" />
+            <Image src={js} alt="js" width={50} height={50} />
+            <Image src={c} alt="c" width={50} height={50} title="" />
+            <Image src={node} alt="node" width={50} height={50} title="" />
+            <Image src={react} alt="react" width={50} height={50} title="" />
+            <Image src={vue} alt="vue" width={50} height={50} />
           </Marquee>
         </div>
 

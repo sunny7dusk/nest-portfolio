@@ -12,4 +12,7 @@ module.exports = {
     defaultLocale: "en",
   },
   rewrites: () => [STUDIO_REWRITE],
+  images: {
+    domains: ["assets.vercel.com", "cdn.sanity.io"],
+  },
 };

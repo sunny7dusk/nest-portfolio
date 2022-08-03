@@ -7,6 +7,8 @@ import Bio from "./bio";
 import Contact from "./contacts";
 import Blogs from "./blogs";
 import { Player } from "@lottiefiles/react-lottie-player";
+import Image from "next/image";
+import heroImage from "../public/assets/dark7storm_full.webp";
 
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -115,11 +117,12 @@ export default function Home() {
               translateY: `${-y}px`,
             }}
           >
-            <img
-              src={"/assets/dark7storm_full.webp"}
+            <Image
+              src={heroImage}
               width={1980}
               height={1080}
               className="object-cover h-[100%] w-[100vw] object-[65%]"
+              alt="Hero image"
             />
             {/* <div className="h-[100%] bg-black opacity-25"></div> */}
           </motion.div>

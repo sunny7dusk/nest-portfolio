@@ -10,6 +10,7 @@ import Link from "next/link";
 export default function Post(props) {
   const { postdata } = props;
   const [items, setItems] = useState([]);
+  const [loadMore, setLoadMore] = useState(true);
   const post = [...postdata];
 
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function Post(props) {
           ? post.length - items.length
           : prev.length + 6
       );
+      if ([...prev, ...toAdd].length === post.length) setLoadMore(false);
       return [...prev, ...toAdd];
     });
   }, []);
@@ -32,6 +34,7 @@ export default function Post(props) {
           prev.length,
           prev.length + 6 >= post.length ? post.length + 1 : prev.length + 6 - 1
         );
+        if ([...prev, ...toAdd].length === post.length) setLoadMore(false);
         return [...prev, ...toAdd];
       });
     console.log(post);
@@ -83,7 +86,7 @@ export default function Post(props) {
             Nate&apos;s Blog!
           </span>
           <br />
-          <Link href={"/"}>
+          <Link href={"/"} alt="home page">
             <span className="bg-clip-text cursor-pointer text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-4xl">
               Click here to go back {">.<"}
             </span>
@@ -135,17 +138,22 @@ export default function Post(props) {
         <div className="col-span-1"></div>
       </div>
       <div className="w-[100vw] flex flex-col align-middle justify-center mt-16 pb-16">
-        <div className="self-center m-auto">
-          <a
-            className="inline-block p-[2px] rounded-full bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] hover:text-white active:text-opacity-75 focus:outline-none focus:ring"
-            href=""
-            onClick={(event) => action(event)}
-          >
-            <span className="block px-8 py-3 text-sm font-medium bg-white rounded-full hover:bg-transparent">
-              More
-            </span>
-          </a>
-        </div>
+        {loadMore && (
+          <div className="self-center m-auto">
+            <a
+              className={`inline-block p-[2px] rounded-full active:text-opacity-75 focus:outline-none focus:ring bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] hover:text-white `}
+              href=""
+              onClick={(event) => action(event)}
+              alt="click to load more"
+            >
+              <span
+                className={`block px-8 py-3 text-sm font-medium rounded-full hover:bg-transparent "bg-white"`}
+              >
+                More
+              </span>
+            </a>
+          </div>
+        )}
       </div>
     </>
   );
