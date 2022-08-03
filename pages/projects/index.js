@@ -5,6 +5,8 @@ import { groq } from "next-sanity";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import { Player } from "@lottiefiles/react-lottie-player";
+
 export default function Post(props) {
   const { postdata } = props;
   const [items, setItems] = useState([]);
@@ -76,16 +78,24 @@ export default function Post(props) {
           rel="stylesheet"
         />
       </Head>
-      <div className="w-[100vw] flex flex-col align-middle justify-center mb-16">
-        <span className="pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center">
-          My Projects
-        </span>
-        <br />
-        <div className="text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl">
-            Personal / School / Work {">.<"}
+      <div className="w-[100vw] grid grid-cols-6 lg:grid-cols-8 mb-16 mt-16 place-items-stretch">
+        <div className="col-span-1"></div>
+        <div className="col-span-3 lg:col-span-5">
+          <span className="pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide">
+            Nate&apos;s Projects!
+          </span>
+          <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-4xl">
+            Things I've worked on {">.<"}
           </span>
         </div>
+        <Player
+          autoplay
+          loop
+          src="https://assets6.lottiefiles.com/packages/lf20_ey835gd2.json"
+          className="col-span-3"
+        ></Player>
+        <div className="col-span-1"></div>
       </div>
       <div className="w-[100vw] grid grid-cols-8 justify-items-center content-center items-center">
         <div className="col-span-1 col-start-1"></div>

@@ -6,8 +6,9 @@ import Projects from "./project";
 import Bio from "./bio";
 import Contact from "./contacts";
 import Blogs from "./blogs";
+import { Player } from "@lottiefiles/react-lottie-player";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import SpotifyFavSong from "./spotify";
@@ -17,12 +18,13 @@ function useParallax(value, distance) {
 }
 
 export default function Home() {
-  // const picRef = useRef(null);
+  const [currInnerWidth, setCurrInnerWidth] = useState(0);
 
   const { scrollY } = useScroll();
   const [y, setY] = useState(0);
 
   useEffect(() => {
+    setCurrInnerWidth(window.innerWidth);
     return scrollY.onChange((latest) => {
       setY(latest);
     });
@@ -85,7 +87,7 @@ export default function Home() {
             transition={{ type: "spring", ease: "easeInOut" }}
             style={{
               opacity: `${1 - y / 400}`,
-              translateX: `${y}px`,
+              translateX: `${currInnerWidth >= 640 ? y : 0}px`,
             }}
             className={`mb-10 fixed snap-center w-full h-[100%] overflow-hidden flex flex-col lg:px-[4rem] px-6 sm:px-10 align-top justify-center animate ease-in-out `}
           >
@@ -104,20 +106,13 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            // initial={{ opacity: 0 }}
-            // whileInView={{ opacity: 1 }}
-            // viewport={{ once: true }}
-            // animate={{ opacity: 1 }}
             transition={{ type: "spring", ease: "easeInOut", delay: 0.25 }}
-            className={`w-full fixed h-[100%] mb-24 overflow-hidden`}
-            // clipPath: `polygon(${
-            //   90 + (y / 100) * 10
-            // }% 0, 100% 0%, 100% 100%, ${y <= 100 ? y : 100}% 100%)`
+            className={`w-full fixed h-[100%] overflow-hidden`}
             style={{
               clipPath: `polygon(${90}% 0, 100% 0%, 100% 100%, ${0}% 100%)`,
               opacity: `${1 - y / 100}`,
-              translateX: `${y}px`,
-              translateY: `${-y}px`,
+              translateX: `${currInnerWidth >= 640 ? y : 0}px`,
+              translateY: `${currInnerWidth >= 640 ? -y : 0}px`,
             }}
           >
             <img
@@ -130,13 +125,19 @@ export default function Home() {
           </motion.div>
         </div>
 
+        <Player
+          autoplay
+          loop
+          src="https://assets5.lottiefiles.com/packages/lf20_pa8t2wqh.json"
+          className="w-[50%] min-h-[50%] flex flex-col justify-center"
+        ></Player>
+
         {/* ref={myRef} */}
         <div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            animate={{ scale: 0.8 }}
             transition={{ type: "spring", ease: "easeInOut" }}
             className="w-full flex flex-col justify-center"
             key={"intro"}
@@ -146,9 +147,8 @@ export default function Home() {
           <Skills />
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            animate={{ scale: 0.8 }}
             transition={{ type: "spring", ease: "easeInOut" }}
             className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
             key={"bio"}
@@ -157,9 +157,8 @@ export default function Home() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            animate={{ scale: 0.8 }}
             transition={{ type: "spring", ease: "easeInOut" }}
             className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
             key={"projects"}
@@ -178,17 +177,16 @@ export default function Home() {
             <Blogs />
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            animate={{ scale: 0.8 }}
             transition={{ type: "spring", ease: "easeInOut" }}
             className="w-full flex flex-col justify-center align-middle mt-36 text-justify"
             key={"spotify"}
           >
             <SpotifyFavSong />
-          </motion.div>
+          </motion.div> */}
 
           <Contact key={"contact"} />
         </div>
