@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "markdown",
-    "@sanity/scheduled-publishing"
+    "@sanity/scheduled-publishing",
+    "vercel-deploy"
   ],
   "env": {
     "development": {
