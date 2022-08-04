@@ -1,4 +1,7 @@
 // import Spotify from "react-spotify-embed";
+export default function SpotifyFavSong() {
+  return <></>;
+}
 // export default function SpotifyFavSong() {
 //   return (
 //     <>
