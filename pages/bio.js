@@ -78,12 +78,6 @@ export default function Bio() {
           </tr>
         </tbody>
       </table>
-      {/* <div
-      // style={{ opacity: `${y >= 2200 ? 1 - (y - 2200) / 100 : 1}` }}
-      // className='snap-center w-full  flex flex-col justify-center align-middle mt-36 text-justify'
-      >
-       
-      </div> */}
     </>
   );
 }

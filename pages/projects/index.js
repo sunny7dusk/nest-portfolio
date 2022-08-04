@@ -5,7 +5,9 @@ import { groq } from "next-sanity";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { Player } from "@lottiefiles/react-lottie-player";
+// import { Player } from "@lottiefiles/react-lottie-player";
+import Lottie from "lottie-react";
+import thinkingAnim from "../../public/assets/thinking.json";
 
 export default function Post(props) {
   const { postdata } = props;
@@ -95,12 +97,7 @@ export default function Post(props) {
             </span>
           </Link>
         </div>
-        <Player
-          autoplay
-          loop
-          src="https://assets6.lottiefiles.com/packages/lf20_ey835gd2.json"
-          className="col-span-3"
-        ></Player>
+        <Lottie animationData={thinkingAnim} autoPlay loop />
         <div className="col-span-1"></div>
       </div>
       <div className="w-[100vw] grid grid-cols-8 justify-items-center content-center items-center">
@@ -165,7 +162,7 @@ export default function Post(props) {
 
 const query = groq`
 *[_type == "post" && $keyword in categories[]->title] | order(_createdAt desc) {
-  ..., 
+  ...,
   author->,
   categories[]->,
   "imageUrl": mainImage.asset->url,

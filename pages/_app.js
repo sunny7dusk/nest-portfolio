@@ -2,12 +2,12 @@ import "../styles/tailwind.css";
 import { useRouter } from "next/router";
 import Loading from "./loading";
 import { useEffect, useState } from "react";
-import Transition from "./transition";
+import Head from "next/head";
+const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  // TODO change it back to true
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleComplete = () => {
@@ -32,9 +32,55 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Transition>
+    <>
+      <Head>
+        <title>Nate&apos;s Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind."
+        />
+        <link rel="canonical" href="/Portfolio" />
+        <meta
+          property="og:title"
+          content="Nathaniel Chai Zhuo En | Portfolio"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.sunny7dusk.dev/" />
+        <meta property="og:image" content={previewImg} />
+        <meta
+          name="twitter:title"
+          content="Nathaniel Chai Zhuo En | Portfolio"
+        />
+        <meta
+          name="twitter:description"
+          content="Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind."
+        />
+        <meta
+          property="og:description"
+          content="Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind."
+        />
+        <meta name="twitter:image" content={previewImg} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="image" content={previewImg} />
+        <script
+          src="https://unpkg.com/github-devprofile@2/dist/card.component.min.mjs"
+          type="module"
+        ></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       {loading ? <Loading /> : <Component {...pageProps} />}
-    </Transition>
+    </>
   );
 }
 
