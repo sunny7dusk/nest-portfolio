@@ -67,7 +67,7 @@ export default function Post(props) {
           content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
         />
         <meta name="twitter:image" content={previewImg} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content={previewImg} />
         <meta property="image" content={previewImg} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

@@ -7,19 +7,15 @@ const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleComplete = () => {
-      setLoading((prev) => {
-        return !prev;
-      });
+      setLoading(false);
     };
 
     const handleLoading = () => {
-      setLoading((prev) => {
-        return !prev;
-      });
+      setLoading(true);
     };
 
     router.events.on("routeChangeStart", handleLoading);
@@ -61,7 +57,7 @@ function MyApp({ Component, pageProps }) {
           content="Nathaniel Chai Zhuo En | Computer Science senior at Virginia Tech. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind."
         />
         <meta name="twitter:image" content={previewImg} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content={previewImg} />
         <meta property="image" content={previewImg} />
         <script
           src="https://unpkg.com/github-devprofile@2/dist/card.component.min.mjs"
