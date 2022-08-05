@@ -11,7 +11,9 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleComplete = () => {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
     };
 
     const handleLoading = () => {
