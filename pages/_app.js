@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Loading from "./loading";
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import Footer from "./footer";
 const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
 function MyApp({ Component, pageProps }) {
@@ -77,7 +78,14 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      {loading ? <Loading /> : <Component {...pageProps} />}
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Component {...pageProps} />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

@@ -17,8 +17,6 @@ export default function Contact({ windowWidth }) {
               <a
                 href="https://github.com/sunny7dusk"
                 className="flex flex-row align-middle justify-center"
-                target="_blank"
-                rel="noreferrer noopener"
               >
                 <AiFillGithub
                   alt="github profile"
