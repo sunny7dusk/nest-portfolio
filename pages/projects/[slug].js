@@ -139,7 +139,7 @@ export default function Post({ data, preview }) {
           )}
           <ReactMarkdown
             children={body}
-            className="max-w-none prose prose-stone lg:prose-xl bg-gray-100 rounded-lg p-8 mt-8 col-span-5 lg:col-span-3"
+            className="max-w-[100%] overflow-auto prose prose-stone lg:prose-xl bg-gray-100 rounded-lg p-8 mt-8 col-span-5 lg:col-span-3"
             remarkPlugins={remarkP}
             rehypePlugins={rehypeP}
             components={{

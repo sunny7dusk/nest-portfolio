@@ -9,6 +9,7 @@ const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  //const [error, setError] = useState(false);
 
   useEffect(() => {
     const handleComplete = () => {
@@ -21,9 +22,13 @@ function MyApp({ Component, pageProps }) {
       setLoading(true);
     };
 
+    // const handleError = () => {
+    //   setError(true)
+    // }
+
     router.events.on("routeChangeStart", handleLoading);
     router.events.on("routeChangeComplete", handleComplete);
-
+    //router.events.on("routeChangeComplete", handleComplete);
     return () => {
       router.events.off("routeChangeStart", handleLoading);
       router.events.off("routeChangeComplete", handleComplete);
