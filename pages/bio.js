@@ -2,11 +2,11 @@ export default function Bio() {
   return (
     <>
       <div className="w-[50vw] self-center">
-        <span className="decoration-solid bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
+        <span className="decoration-solid bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Here&apos;s my story so far :<br />
         </span>
       </div>
-      <table className="w-[60vw] table-auto text-xs sm:text-1xl lg:text-2xl 2xl:text-5xl self-center text-white lg:text-slate-500">
+      <table className="w-[60vw] table-auto text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl self-center text-white lg:text-slate-500">
         <tbody>
           <tr className="hover:text-white animation ease-in-out duration-100">
             <td className="p-2 sm:p-4">2000</td>

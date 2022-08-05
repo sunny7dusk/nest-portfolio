@@ -100,7 +100,7 @@ export default function Skills() {
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-[50vw] self-center text-justify"
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl">
             I&apos;m always constantly learning new technologies to broaden my
             skill set! Here are some of the technologies I&apos;ve been working
             with!
