@@ -19,10 +19,6 @@ const postQuery = groq`
     title,
     body,
     mainImage,
-    categories[]->{
-      _id,
-      title
-    },
     "slug": slug.current,
     excerpt,
     "author": author->{
@@ -60,8 +56,7 @@ export default function Post({ data, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const { title, mainImage, body, excerpt, author, publishedAt, categories } =
-    post;
+  const { title, mainImage, body, excerpt, author, publishedAt } = post;
 
   const previewImg = urlFor(mainImage).url();
 

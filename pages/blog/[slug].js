@@ -19,10 +19,6 @@ const postQuery = groq`
     title,
     body,
     mainImage,
-    categories[]->{
-      _id,
-      title
-    },
     "slug": slug.current,
     excerpt,
     "author": author->{
@@ -31,6 +27,11 @@ const postQuery = groq`
     publishedAt
   }
 `;
+
+// categories[]->{
+//   _id,
+//   title
+// },
 
 export default function Post({ data, preview }) {
   const remarkP = [remarkGfm, remarkMath];
@@ -60,8 +61,7 @@ export default function Post({ data, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const { title, mainImage, body, excerpt, author, publishedAt, categories } =
-    post;
+  const { title, mainImage, body, excerpt, author, publishedAt } = post;
 
   // console.log(post);
 
