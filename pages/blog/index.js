@@ -96,9 +96,9 @@ export default function Post(props) {
         <Lottie animationData={thinkingAnim} autoPlay loop />
         <div className="col-span-1"></div>
       </div>
-      <div className="w-[100vw] grid grid-cols-8 justify-items-center content-center items-center">
+      <section className="w-[100vw] grid grid-cols-8 justify-items-center content-center items-center">
         <div className="col-span-1 col-start-1"></div>
-        <div className="col-span-6 grid grid-cols-1 lg:grid-cols-6 gap-16 justify-items-center content-center items-center">
+        <section className="col-span-6 grid grid-cols-1 lg:grid-cols-6 gap-16 justify-items-center content-center items-center">
           {items &&
             items.map((item) => (
               <article
@@ -109,6 +109,7 @@ export default function Post(props) {
                   <div className="flex flex-col justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90">
                     <img
                       src={item.imageUrl}
+                      alt={item.title}
                       className="object-contain self-center saturate-[0.8] h-[150px] lg:h-[250px]"
                     />
                     <div className="mt-12">
@@ -130,10 +131,10 @@ export default function Post(props) {
                 </Link>
               </article>
             ))}
-        </div>
+        </section>
         <div className="col-span-1"></div>
-      </div>
-      <div className="w-[100vw] flex flex-col align-middle justify-center mt-16 pb-16">
+      </section>
+      <section className="w-[100vw] flex flex-col align-middle justify-center mt-16 pb-16">
         {loadMore && (
           <div className="self-center m-auto">
             <a
@@ -150,7 +151,7 @@ export default function Post(props) {
             </a>
           </div>
         )}
-      </div>
+      </section>
     </>
   );
 }

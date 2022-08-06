@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full h-[100vh] relative">
+      <section className="w-full h-[100vh] relative">
         <motion.div
           transition={{ type: "spring", ease: "easeInOut" }}
           style={{
@@ -67,7 +67,7 @@ export default function Home() {
             alt="Hero image"
           />
         </motion.div>
-      </div>
+      </section>
 
       <div className="flex flex-col justify-center items-center">
         <Lottie
@@ -78,50 +78,53 @@ export default function Home() {
         />
       </div>
 
-      <div>
-        <motion.div
+      <main>
+        <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center"
-          key={"intro"}
+          aria-label={"intro"}
         >
           <Intro />
-        </motion.div>
-        <Skills />
-        <motion.div
+        </motion.section>
+
+        <section aria-label="skills">
+          <Skills />
+        </section>
+        <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
-          key={"bio"}
+          aria-label={"bio"}
         >
           <Bio />
-        </motion.div>
-        <motion.div
+        </motion.section>
+        <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
-          key={"projects"}
+          aria-label={"projects"}
         >
           <Projects />
-        </motion.div>
+        </motion.section>
 
-        <motion.div
+        <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
-          key={"blogs"}
+          aria-label={"blogs"}
         >
           <Blogs />
-        </motion.div>
-      </div>
+        </motion.section>
+      </main>
     </>
   );
 }

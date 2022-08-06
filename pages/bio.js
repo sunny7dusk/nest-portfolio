@@ -2,82 +2,124 @@ export default function Bio() {
   return (
     <>
       <div className="w-[50vw] self-center">
-        <span className="decoration-solid bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
+        <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Here&apos;s my story so far :<br />
         </span>
       </div>
-      <table className="w-[60vw] table-auto text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl self-center text-white lg:text-slate-500">
-        <tbody>
-          <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4">2000</td>
-            <td className="p-2 sm:p-4">Born in Kuching, Sarawak (Malaysia)</td>
-          </tr>
-          <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4">2019</td>
-            <td className="p-2 sm:p-4">
-              Finished the American Degree Transfer Program at KDU Damansara
-              Jaya
-            </td>
-          </tr>
-          <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4"> 2019 (Ongoing)</td>
-            <td className="p-2 sm:p-4">
-              Studying Computer Science at{" "}
-              <a
-                href="https://cs.vt.edu/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                Virginia Tech
-              </a>{" "}
-              (Senior)
-            </td>
-          </tr>
-          <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4">2021 (Ongoing)</td>
-            <td className="p-2 sm:p-4">
-              Social Media and Communications Lead,{" "}
-              <a
-                href="https://sites.google.com/vt.edu/dscvt"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                Google Developer Student Club at Virginia Tech
-              </a>
-            </td>
-          </tr>
-          <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4">2021 (Ongoing)</td>
-            <td className="p-2 sm:p-4">
-              Web Development team,{" "}
-              <a
-                href="https://www.rocketryatvirginiatech.org/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                Rocketry at Virginia Tech
-              </a>
-            </td>
-          </tr>
-          <tr className="hover:text-white animation ease-in-out duration-100">
-            <td className="p-2 sm:p-4">2022</td>
-            <td className="p-2 sm:p-4">
-              Software Engineering Intern (React components team),{" "}
-              <a
-                href="https://sciencelogic.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                ScienceLogic
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <ul
+        aria-label="timeline"
+        className="relative mt-4 w-[50vw] text-sm sm:text-xl lg:text-2xl 2xl:text-5xl self-center text-slate-300 lg:text-slate-500 "
+      >
+        {/* <li className="hover:text-white animation ease-in-out duration-100 list-inside list-none border-l-2">
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl ">
+            2000
+          </time>
+          <td className="p-2 sm:p-4">
+            &#9;Born in Kuching, Sarawak (Malaysia)
+          </td>
+        </li> */}
+        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
+        <li className="hover:text-slate-300 animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            2019
+          </time>
+          <div className="p-2 sm:p-4">
+            Finished the American Degree Transfer Program at KDU Damansara Jaya
+          </div>
+        </li>
+        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
+        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            {" "}
+            2019 (Ongoing)
+          </time>
+          <div className="pt-2 pl-2 sm:pt-4 sm:pl-4">
+            Studying Computer Science at{" "}
+          </div>
+          <nav
+            className="pb-2 pl-2 sm:pb-4 sm:pl-4"
+            aria-label="computer science at virginia tech"
+          >
+            <a
+              href="https://cs.vt.edu/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline"
+            >
+              Virginia Tech (Senior)
+            </a>{" "}
+          </nav>
+        </li>
+        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
+        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#84B8D9] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            2021 (Ongoing)
+          </time>
+          <div className="pt-2 pl-2 sm:pt-4 sm:pl-4">
+            Social Media and Communications Lead,{" "}
+          </div>
+          <nav
+            className="pb-2 pl-2 sm:pb-4 sm:pl-4"
+            aria-label="google developer student clubs at virginia tech"
+          >
+            <a
+              href="https://sites.google.com/vt.edu/dscvt"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline"
+            >
+              Google Developer Student Club at Virginia Tech
+            </a>
+          </nav>
+        </li>
+        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
+        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            2021 (Ongoing)
+          </time>
+          <div className="pt-2 pl-2 sm:pt-4 sm:pl-4">
+            Web Development team,{" "}
+          </div>
+          <nav
+            className="pb-2 pl-2 sm:pb-4 sm:pl-4"
+            aria-label="rocketry at virginia tech"
+          >
+            <a
+              href="https://www.rocketryatvirginiatech.org/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline"
+            >
+              Rocketry at Virginia Tech
+            </a>
+          </nav>
+        </li>
+        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
+        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            2022
+          </time>
+          <div className="pt-2 pl-2 sm:pt-4 sm:pl-4">
+            Software Engineering Intern (React components team),{" "}
+          </div>
+          <nav className="pb-2 pl-2 sm:pb-4 sm:pl-4" aria-label="sciencelogic">
+            <a
+              href="https://sciencelogic.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline"
+            >
+              ScienceLogic
+            </a>
+          </nav>
+        </li>
+      </ul>
     </>
   );
 }

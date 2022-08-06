@@ -1,13 +1,13 @@
 export default function Intro() {
   return (
     <>
-      <div className="self-center w-[50vw] ">
+      <header className="self-center w-[50vw] ">
         <h1 className="ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl tracking-wide text-center">
           Nathaniel Chai Zhuo En 蔡卓恩
         </h1>
         <br />
         <div className="text-justify">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-md sm:text-xl lg:text-2xl 2xl:text-5xl">
+          <span className="text-slate-300 text-md sm:text-xl lg:text-2xl 2xl:text-5xl">
             Growing up in Malaysia, I have always been fascinated by the
             technological side of the world. Driven by the desire to learn, I
             constantly immerse myself in new and upcoming programming
@@ -15,7 +15,7 @@ export default function Intro() {
             studying Computer Science at Virginia Tech.
           </span>
         </div>
-      </div>
+      </header>
     </>
   );
 }

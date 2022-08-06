@@ -86,10 +86,10 @@ function MyApp({ Component, pageProps }) {
       {loading ? (
         <Loading />
       ) : (
-        <>
+        <section>
           <Component {...pageProps} />
           <Footer />
-        </>
+        </section>
       )}
     </>
   );

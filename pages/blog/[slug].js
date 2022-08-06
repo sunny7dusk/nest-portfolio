@@ -116,11 +116,11 @@ export default function Post({ data, preview }) {
           <FaArrowLeft />
         </span>
         <div className="col-span-1"></div>
-        <div className="grid grid-cols-3 col-span-5 lg:col-span-3 border-dashed border-gray-100">
+        <section className="grid grid-cols-3 col-span-5 lg:col-span-3 border-dashed border-gray-100">
           <h1 className="col-span-3 pt-8 lg:pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-wide text-center">
             {title}
           </h1>
-          <div className="col-span-3 pt-8 pb-8 ease-in-out duration-300 tracking-wide text-center text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-100">
+          <section className="col-span-3 pt-8 pb-8 ease-in-out duration-300 tracking-wide text-center text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-100">
             By{" "}
             <span className="bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-clip-text text-transparent">
               {author.name}
@@ -129,10 +129,13 @@ export default function Post({ data, preview }) {
             <span className="bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-clip-text text-transparent">
               {publishedAt.split("T")[0]}
             </span>{" "}
-          </div>
+          </section>
           {mainImage && (
             <>
-              <figure className="col-span-3 text-center self-center flex flex-col align-middle justify-center">
+              <figure
+                alt={title}
+                className="col-span-3 text-center self-center flex flex-col align-middle justify-center"
+              >
                 <img
                   src={urlFor(mainImage).url()}
                   alt="image"
@@ -166,7 +169,7 @@ export default function Post({ data, preview }) {
               },
             }}
           />
-        </div>
+        </section>
         <div className="col-span-1"></div>
       </article>
     </>
