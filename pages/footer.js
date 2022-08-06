@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa/index";
 import { CgFileDocument } from "react-icons/cg/index";
 export default function Footer() {
   return (
-    <footer className="relative py-40 flex flex-col items-center overflow-hidden">
+    <footer className="relative pt-40 pb-20 flex flex-col items-center overflow-hidden">
       <div className="relative z-[1] container m-auto px-6 md:px-12">
         <div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
           <div className="flex flex-wrap items-center justify-between md:flex-nowrap">
@@ -121,6 +121,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <small className="block text-gray-300 self-center pt-16">
+        &copy; Copyright 2022, Nathaniel Zhuo En Chai
+      </small>
     </footer>
   );
 }
