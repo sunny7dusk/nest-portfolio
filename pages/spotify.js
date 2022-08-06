@@ -5,7 +5,7 @@ export default function SpotifyFavSong() {
 // export default function SpotifyFavSong() {
 //   return (
 //     <>
-//       <div className="self-center w-[50vw] flex flex-col items-center justify-center">
+//       <div className="self-center w-[70vw] sm:w-[50vw] flex flex-col items-center justify-center">
 //         <div className="text-justify mt-auto mb-auto mr-auto">
 //           <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-5xl">
 //             My jam right now!

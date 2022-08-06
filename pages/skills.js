@@ -19,7 +19,7 @@ export default function Skills() {
   return (
     <>
       <div className="snap-center w-full flex flex-col justify-center mt-36">
-        <div className=" hidden xl:block w-[50vw] self-center">
+        <div className=" hidden xl:block w-[70vw] sm:w-[50vw] self-center">
           <Marquee
             className={`h-[100px] mb-3 self-center ` + styles.logos}
             gradient={false}
@@ -98,7 +98,7 @@ export default function Skills() {
           viewport={{ once: true }}
           animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="w-[50vw] self-center text-justify"
+          className="w-[70vw] sm:w-[50vw] self-center text-justify"
         >
           <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl">
             I&apos;m always constantly learning new technologies to broaden my

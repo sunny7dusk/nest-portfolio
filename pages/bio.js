@@ -1,14 +1,14 @@
 export default function Bio() {
   return (
     <>
-      <div className="w-[50vw] self-center">
+      <div className="w-[70vw] sm:w-[50vw] self-center">
         <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Here&apos;s my story so far :<br />
         </span>
       </div>
       <ul
         aria-label="timeline"
-        className="relative mt-4 w-[50vw] text-sm sm:text-xl lg:text-2xl 2xl:text-5xl self-center text-slate-300 lg:text-slate-500 "
+        className="relative mt-4 w-[70vw] sm:w-[50vw] text-sm sm:text-xl lg:text-2xl 2xl:text-5xl self-center text-slate-300 lg:text-slate-500 "
       >
         {/* <li className="hover:text-white animation ease-in-out duration-100 list-inside list-none border-l-2">
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl ">
