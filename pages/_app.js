@@ -1,9 +1,11 @@
 import "../styles/tailwind.css";
 import { useRouter } from "next/router";
-import Loading from "./loading";
+import Loading from "../components/loading";
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import Footer from "./footer";
+import Footer from "../components/footer";
+import Script from "next/script";
+
 const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 
 function MyApp({ Component, pageProps }) {
@@ -67,20 +69,16 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content={previewImg} />
         <meta name="twitter:card" content={previewImg} />
         <meta property="image" content={previewImg} />
-        <script
-          src="https://unpkg.com/github-devprofile@2/dist/card.component.min.mjs"
-          type="module"
-        ></script>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
+        <Script
+          strategy="beforeInteractive"
+          id="google fonts"
+          src="https://fonts.googleapis.com"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-          rel="stylesheet"
+        <Script
+          strategy="beforeInteractive"
+          id="google fonts static"
+          src="https://fonts.gstatic.com"
+          crossOrigin
         />
       </Head>
       {loading ? (

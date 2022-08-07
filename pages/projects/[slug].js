@@ -13,6 +13,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { FaArrowLeft } from "react-icons/fa";
+import Script from "next/script";
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -89,16 +90,21 @@ export default function Post({ data, preview }) {
         <meta name="twitter:image" content={previewImg} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="image" content={previewImg} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
+        <Script
+          strategy="beforeInteractive"
+          id="google fonts"
+          src="https://fonts.googleapis.com"
         />
-        <link
+        <Script
+          strategy="beforeInteractive"
+          id="google fonts static"
+          src="https://fonts.gstatic.com"
+          crossOrigin
+        />
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
           rel="stylesheet"
-        />
+        /> */}
       </Head>
       <article className="w-[100vw] grid grid-cols-7 lg:grid-cols-5 place-content-stretch pb-8">
         <span

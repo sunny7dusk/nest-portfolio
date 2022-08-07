@@ -1,9 +1,8 @@
-import Intro from "./intro";
-import Skills from "./skills";
-import Projects from "./project";
-import Bio from "./bio";
-// import Contact from "./contacts";
-import Blogs from "./blogs";
+import Intro from "../components/intro";
+import Skills from "../components/skills";
+import Projects from "../components/project";
+import Bio from "../components/bio";
+import Blogs from "../components/blogs";
 import computerAnim from "../public/assets/computer.json";
 import Lottie from "lottie-react";
 
@@ -11,8 +10,6 @@ import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 
 export default function Home() {
-  // const [currInnerWidth, setCurrInnerWidth] = useState(0);
-
   const { scrollY } = useScroll();
   const [y, setY] = useState(0);
 

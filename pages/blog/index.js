@@ -7,6 +7,7 @@ import Lottie from "lottie-react";
 import thinkingAnim from "../../public/assets/thinking.json";
 
 import Link from "next/link";
+import Script from "next/script";
 
 export default function Post(props) {
   const { postdata } = props;
@@ -69,16 +70,21 @@ export default function Post(props) {
         <meta name="twitter:image" content={previewImg} />
         <meta name="twitter:card" content={previewImg} />
         <meta property="image" content={previewImg} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
+        <Script
+          strategy="beforeInteractive"
+          id="google fonts"
+          src="https://fonts.googleapis.com"
         />
-        <link
+        <Script
+          strategy="beforeInteractive"
+          id="google fonts static"
+          src="https://fonts.gstatic.com"
+          crossOrigin
+        />
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
           rel="stylesheet"
-        />
+        /> */}
       </Head>
       <div className="w-[100vw] grid grid-cols-6 lg:grid-cols-8 mb-16 mt-16 place-items-stretch">
         <div className="col-span-1"></div>

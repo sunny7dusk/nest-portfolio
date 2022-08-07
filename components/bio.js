@@ -10,15 +10,6 @@ export default function Bio() {
         aria-label="timeline"
         className="relative mt-4 w-[70vw] sm:w-[50vw] text-sm sm:text-xl lg:text-2xl 2xl:text-5xl self-center text-slate-300 lg:text-slate-500 "
       >
-        {/* <li className="hover:text-white animation ease-in-out duration-100 list-inside list-none border-l-2">
-          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl ">
-            2000
-          </time>
-          <td className="p-2 sm:p-4">
-            &#9;Born in Kuching, Sarawak (Malaysia)
-          </td>
-        </li> */}
-        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
         <li className="hover:text-slate-300 animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
           <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
@@ -28,7 +19,7 @@ export default function Bio() {
             Finished the American Degree Transfer Program at KDU Damansara Jaya
           </div>
         </li>
-        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
+
         <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
           <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
@@ -50,7 +41,6 @@ export default function Bio() {
             </nav>
           </div>
         </li>
-        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
         <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
           <div className="absolute rounded-full border bg-[#84B8D9] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
@@ -70,7 +60,6 @@ export default function Bio() {
             </nav>
           </div>
         </li>
-        {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
         <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
           <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
