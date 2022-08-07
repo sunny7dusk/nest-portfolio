@@ -188,6 +188,7 @@ export async function getStaticProps({ params, preview = false }) {
       preview,
       data: { post },
     },
+    // takes 10 minutes to invalidate cache if 10 minute passed from last visit
     revalidate: 600,
   };
 }
@@ -199,6 +200,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false,
+    // if a new page is not build yet, server render first then load it to cache
+    fallback: "blocking",
   };
 }
