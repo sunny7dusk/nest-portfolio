@@ -116,14 +116,7 @@ export default function Post({ data, preview }) {
             {title}
           </h1>
           <section className="col-span-3 pt-8 pb-8 ease-in-out duration-300 tracking-wide text-center text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-100">
-            By{" "}
-            <span className="bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-clip-text text-transparent">
-              {author.name}
-            </span>{" "}
-            published at{" "}
-            <span className="bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-clip-text text-transparent">
-              {publishedAt.split("T")[0]}
-            </span>{" "}
+            By {author.name} published at {publishedAt.split("T")[0]}
           </section>
           {mainImage && (
             <>
