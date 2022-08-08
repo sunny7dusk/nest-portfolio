@@ -34,7 +34,7 @@ export default function Post(props) {
       setItems((prev) => {
         let toAdd = post.slice(
           prev.length,
-          prev.length + 6 >= post.length ? post.length + 1 : prev.length + 6 - 1
+          prev.length + 6 >= post.length ? post.length : prev.length + 6
         );
         if ([...prev, ...toAdd].length === post.length) setLoadMore(false);
         return [...prev, ...toAdd];
