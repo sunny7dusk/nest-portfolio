@@ -7,11 +7,17 @@ import Footer from "../components/footer";
 import Script from "next/script";
 
 const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
+const validRoutes = [
+  "/",
+  "/blog/[slug]",
+  "/blog",
+  "/projects",
+  "/projects/[slug]",
+];
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  //const [error, setError] = useState(false);
 
   useEffect(() => {
     const handleComplete = () => {
@@ -24,16 +30,21 @@ function MyApp({ Component, pageProps }) {
       setLoading(true);
     };
 
-    // const handleError = () => {
-    //   setError(true)
-    // }
+    const handleError = () => {
+      setLoading(false);
+    };
+
+    if (!validRoutes.includes(router.pathname)) {
+      handleError();
+    }
 
     router.events.on("routeChangeStart", handleLoading);
     router.events.on("routeChangeComplete", handleComplete);
-    //router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleError);
     return () => {
       router.events.off("routeChangeStart", handleLoading);
       router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleError);
     };
   }, []);
 

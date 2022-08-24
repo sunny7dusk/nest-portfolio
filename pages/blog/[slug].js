@@ -1,7 +1,6 @@
 /* eslint-disable react/no-children-prop */
 // pages/posts/[slug].js
 import Head from "next/head";
-import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { groq } from "next-sanity";
 import { usePreviewSubscription, urlFor } from "../../lib/sanity";
@@ -14,6 +13,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { FaArrowLeft } from "react-icons/fa";
 import Script from "next/script";
+import NotFoundPage from "pages/404";
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -46,7 +46,7 @@ export default function Post({ data, preview }) {
   });
 
   if (data === undefined) {
-    return <ErrorPage statusCode={404} />;
+    return <NotFoundPage />;
   }
 
   if (router.isFallback) {
@@ -60,7 +60,7 @@ export default function Post({ data, preview }) {
   }
 
   if (!router.isFallback && !data.post?.slug) {
-    return <ErrorPage statusCode={404} />;
+    return <NotFoundPage />;
   }
 
   const { title, mainImage, body, excerpt, author, publishedAt } = post;
