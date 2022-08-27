@@ -1,24 +1,24 @@
-import styles from "../styles/Skills.module.css";
-import Marquee from "react-fast-marquee";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import html5 from "../public/assets/html-5.webp";
-import css from "../public/assets/css.webp";
-import firebase from "../public/assets/icons8-google-firebase-console-96.webp";
-import flutter from "../public/assets/icons8-flutter-96.webp";
-import python from "../public/assets/icons8-python-96.webp";
-import java from "../public/assets/icons8-java-96.webp";
-import c from "../public/assets/icons8-c-programming-96.webp";
-import react from "../public/assets/icons8-react-native-96.webp";
-import angular from "../public/assets/angular.svg";
-import js from "../public/assets/js-format.webp";
-import node from "../public/assets/icons8-nodejs-96.webp";
-import vue from "../public/assets/vue.png";
+// import styles from "../styles/Skills.module.css";
+// import Marquee from "react-fast-marquee";
+// import { motion } from "framer-motion";
+// import Image from "next/image";
+// import html5 from "../public/assets/html-5.webp";
+// import css from "../public/assets/css.webp";
+// import firebase from "../public/assets/icons8-google-firebase-console-96.webp";
+// import flutter from "../public/assets/icons8-flutter-96.webp";
+// import python from "../public/assets/icons8-python-96.webp";
+// import java from "../public/assets/icons8-java-96.webp";
+// import c from "../public/assets/icons8-c-programming-96.webp";
+// import react from "../public/assets/icons8-react-native-96.webp";
+// import angular from "../public/assets/angular.svg";
+// import js from "../public/assets/js-format.webp";
+// import node from "../public/assets/icons8-nodejs-96.webp";
+// import vue from "../public/assets/vue.png";
 
 export default function Skills() {
   return (
     <>
-      <div className="snap-center w-full flex flex-col justify-center mt-36">
+      {/* <div className="snap-center w-full flex flex-col justify-center mt-36">
         <div className=" hidden xl:block w-[70vw] sm:w-[50vw] self-center">
           <Marquee
             className={`h-[100px] mb-3 self-center ` + styles.logos}
@@ -106,7 +106,7 @@ export default function Skills() {
             with!
           </span>
         </motion.div>
-      </div>
+      </div> */}
     </>
   );
 }
