@@ -9,7 +9,7 @@ export default function WebDevelopment() {
     <div className="text-slate-300 text-sm sm:text-lg lg:text-1xl 2xl:text-4xl text-center">
       <div className="flex flex-row items-center hover:scale-105 ease-in-out duration-150">
         <BsArrowReturnRight className="mr-4" />
-        Web Development 🤩
+        <span className="select-none ">Web Development 🤩</span>
       </div>
       <section className="py-4 lg:py-8 flex flex-row gap-x-4 justify-center ">
         <TiHtml5
