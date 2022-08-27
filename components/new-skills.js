@@ -21,7 +21,7 @@ export default function Skills() {
             with!
           </span>
         </motion.div>
-        <div className="w-[70vw] xs:w-[50vw] self-center text-slate-400 py-4">
+        <div className="w-[70vw] xs:w-[50vw] self-center text-slate-400 py-8">
           <div className="py-4">
             <WebDevelopment />
           </div>

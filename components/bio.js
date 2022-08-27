@@ -2,7 +2,7 @@ export default function Bio() {
   return (
     <>
       <div className="w-[70vw] xs:w-[50vw] self-center">
-        <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
+        <span className="select-none text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Here&apos;s my story so far :<br />
         </span>
       </div>

@@ -6,12 +6,12 @@ import { FaVuejs, FaAngular, FaReact, FaNodeJs } from "react-icons/fa";
 
 export default function WebDevelopment() {
   return (
-    <div className="text-slate-300 text-sm sm:text-lg lg:text-1xl 2xl:text-4xl text-center">
-      <div className="flex flex-row items-center hover:scale-105 ease-in-out duration-150 hover:text-[#A3767D]">
+    <div className="text-slate-300 text-sm sm:text-lg lg:text-1xl 2xl:text-4xl text-center hover:text-[#A3767D]">
+      <div className="flex flex-row items-center hover:scale-105 ease-in-out duration-150 ">
         <BsArrowReturnRight className="mr-4" color="#A3767D" />
         <span className="select-none ">Web Development 🤩</span>
       </div>
-      <section className="py-4 lg:py-8 flex flex-row gap-x-4 justify-center ">
+      <section className="py-4 lg:py-8 flex flex-row gap-x-4 justify-evenly">
         <TiHtml5
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
