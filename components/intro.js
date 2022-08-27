@@ -7,7 +7,7 @@ export default function Intro() {
         </h1>
         <br />
       </header>
-      <div className="text-justify self-center w-[70vw] xs:w-[50vw] ">
+      <div className="text-justify self-center w-[70vw]">
         <span className="text-slate-300 text-md sm:text-xl lg:text-2xl 2xl:text-5xl">
           Growing up in Malaysia, I have always been fascinated by the
           technological side of the world. Driven by the desire to learn, I

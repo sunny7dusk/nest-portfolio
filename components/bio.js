@@ -1,7 +1,7 @@
 export default function Bio() {
   return (
     <>
-      <div className="w-[70vw] xs:w-[50vw] self-center">
+      <div className="w-[70vw] self-center">
         <span className="select-none text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Here&apos;s my story so far :<br />
         </span>
@@ -27,8 +27,8 @@ export default function Bio() {
             2019 (Ongoing)
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
-            Studying Computer Science at{" "}
-            <nav aria-label="computer science at virginia tech">
+            <nav aria-label="google developer student clubs at virginia tech">
+              Studying Computer Science at{" "}
               <a
                 href="https://cs.vt.edu/"
                 target="_blank"
@@ -47,8 +47,8 @@ export default function Bio() {
             2021 (Ongoing)
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
-            Social Media and Communications Lead,{" "}
             <nav aria-label="google developer student clubs at virginia tech">
+              Social Media and Communications Lead,{" "}
               <a
                 href="https://sites.google.com/vt.edu/dscvt"
                 target="_blank"
@@ -66,8 +66,8 @@ export default function Bio() {
             2021 (Ongoing)
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
-            Web Development team,{" "}
             <nav aria-label="rocketry at virginia tech">
+              Web Development team,{" "}
               <a
                 href="https://www.rocketryatvirginiatech.org/"
                 target="_blank"
@@ -87,8 +87,8 @@ export default function Bio() {
             2022
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
-            Software Engineering Intern (React components team),
             <nav aria-label="sciencelogic">
+              Software Engineering Intern (React components team),{" "}
               <a
                 href="https://sciencelogic.com/"
                 target="_blank"

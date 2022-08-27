@@ -16,7 +16,7 @@ import {
 
 export default function WebDevelopment() {
   return (
-    <div className="text-slate-300 text-sm sm:text-lg lg:text-1xl 2xl:text-4xl text-center hover:text-[#A3767D]">
+    <div className="lg:text-slate-300 text-[#A3767D] text-sm sm:text-lg lg:text-1xl 2xl:text-4xl text-center hover:text-[#A3767D]">
       <div className="flex flex-row items-center hover:scale-105 ease-in-out duration-150 ">
         <BsArrowReturnRight className="mr-4" color="#A3767D" />
         <span className="select-none ">Web Development 🤩</span>
