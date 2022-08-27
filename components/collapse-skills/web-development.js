@@ -1,8 +1,18 @@
 import { BsArrowReturnRight } from "react-icons/bs";
-import { TiHtml5, TiCss3 } from "react-icons/ti";
-import { SiTypescript, SiGraphql } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io";
-import { FaVuejs, FaAngular, FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiGraphql,
+  SiNextdotjs,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiVuedotjs,
+  SiAngular,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiStyledcomponents,
+} from "react-icons/si";
 
 export default function WebDevelopment() {
   return (
@@ -12,15 +22,23 @@ export default function WebDevelopment() {
         <span className="select-none ">Web Development 🤩</span>
       </div>
       <section className="py-4 lg:py-8 flex flex-row gap-x-4 justify-evenly">
-        <TiHtml5
+        <SiHtml5
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
-        <TiCss3
+        <SiCss3
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
-        <IoLogoJavascript
+        <SiTailwindcss
+          width={60}
+          className="ease-in-out duration-150 hover:scale-125"
+        />
+        <SiStyledcomponents
+          width={60}
+          className="ease-in-out duration-150 hover:scale-125"
+        />
+        <SiJavascript
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
@@ -28,19 +46,25 @@ export default function WebDevelopment() {
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
-        <FaReact
+      </section>
+      <section className="py-4 lg:py-8 flex flex-row gap-x-4 justify-evenly">
+        <SiReact
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
-        <FaVuejs
+        <SiNextdotjs
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
-        <FaAngular
+        <SiVuedotjs
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
-        <FaNodeJs
+        <SiAngular
+          width={60}
+          className="ease-in-out duration-150 hover:scale-125"
+        />
+        <SiNodedotjs
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
