@@ -6,22 +6,18 @@ import SystemsDevelopment from "./collapse-skills/systems-development";
 export default function Skills() {
   return (
     <>
-      <div className="snap-center w-full flex flex-col justify-center mt-36">
+      <div className="snap-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 w-[70vw] justify-center mt-36 ">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="w-[70vw] xs:w-[50vw] self-center text-justify"
+          className="self-center text-justify lg:col-span-4"
         >
           <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl">
-            I&apos;m always constantly learning new technologies to broaden my
-            skill set! Here are some of the technologies I&apos;ve been working
-            with!
+            I&apos;m always learning new technologies to broaden my skill set!
+            Here are some of the technologies I&apos;ve been working with!
           </span>
         </motion.div>
-        <div className="w-[70vw] self-center text-slate-400 py-8">
+        <div className="lg:col-span-1"></div>
+        <div className="self-center text-slate-400 py-8 lg:col-span-5">
           <div className="py-4">
             <WebDevelopment />
           </div>

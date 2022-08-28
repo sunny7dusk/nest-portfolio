@@ -9,7 +9,13 @@ import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 
-export default function Home() {
+import { getClient } from "@lib/sanity.server";
+
+import { groq } from "next-sanity";
+
+export default function Home(props) {
+  const { data } = props;
+  const { posts, postsAll } = data;
   const { scrollY } = useScroll();
   const [y, setY] = useState(0);
 
@@ -23,7 +29,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="w-full h-[100vh] relative">
+      <section className="w-full h-[100vh] relative tracking-wide">
         <motion.div
           transition={{ type: "spring", ease: "easeInOut" }}
           style={{
@@ -77,9 +83,6 @@ export default function Home() {
 
       <main>
         <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center"
           aria-label={"intro"}
@@ -87,41 +90,70 @@ export default function Home() {
           <Intro />
         </motion.section>
 
-        <section aria-label="skills">
-          <Skills />
-        </section>
         <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="w-full  flex flex-col justify-center align-middle mt-36 text-justify"
+          className="w-full flex flex-col justify-center items-center"
+          aria-label={"skills"}
+        >
+          <Skills />
+        </motion.section>
+
+        <motion.section
+          transition={{ type: "spring", ease: "easeInOut" }}
+          className="w-full  flex flex-col justify-center align-middle mt-36 "
           aria-label={"bio"}
         >
           <Bio />
         </motion.section>
         <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
+          className="w-full flex flex-col justify-center mt-36 align-middle"
           aria-label={"projects"}
         >
-          <Projects />
+          <Projects posts={posts} />
         </motion.section>
 
         <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="w-full flex flex-col justify-center mt-36 text-justify align-middle"
+          className="w-full flex flex-col justify-center mt-36 align-middle"
           aria-label={"blogs"}
         >
-          <Blogs />
+          <Blogs posts={postsAll} />
         </motion.section>
       </main>
     </>
   );
+}
+
+const query = groq`
+*[_type == "post" && $keyword in categories[]->title] | order(_createdAt desc) {
+  ...,
+  author->,
+  categories[]->,
+  "imageUrl": mainImage.asset->url,
+  excerpt,
+}[0..2]
+`;
+
+const queryAll = groq`
+*[_type == "post" && (!("Projects" in categories[]->title))] | order(_createdAt desc) {
+  ...,
+  author->,
+  categories[]->,
+  "imageUrl": mainImage.asset->url,
+  excerpt,
+}[0..2]
+`;
+
+export async function getStaticProps({ preview = false }) {
+  const posts = await getClient(preview).fetch(query, { keyword: "Projects" });
+  const postsAll = await getClient(preview).fetch(queryAll);
+
+  return {
+    props: {
+      preview,
+      data: { posts, postsAll },
+    },
+    revalidate: 600,
+  };
 }
