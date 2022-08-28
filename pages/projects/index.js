@@ -41,7 +41,7 @@ export default function Post(props) {
         if ([...prev, ...toAdd].length === post.length) setLoadMore(false);
         return [...prev, ...toAdd];
       });
-    console.log(post);
+    //console.log(post);
   };
 
   const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
