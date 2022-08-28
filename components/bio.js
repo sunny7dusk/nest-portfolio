@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Bio() {
   return (
     <>
@@ -89,14 +90,13 @@ export default function Bio() {
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
             <nav aria-label="sciencelogic">
               Software Engineering Intern (React components team),{" "}
-              <a
-                href="https://sciencelogic.com/"
+              <Link
+                href="projects/software-engineering-intern-at-sciencelogic"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="underline"
               >
-                ScienceLogic
-              </a>
+                <span className="underline">ScienceLogic</span>
+              </Link>
             </nav>
           </div>
         </li>
