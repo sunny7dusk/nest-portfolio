@@ -8,7 +8,7 @@ export default function BlogCard({ item, small }) {
         small ? "w-[100%]" : "w-[100%]"
       }`}
     >
-      {small ? <SmallVersion item={item} /> : <LargeVersion item={item} />}\{" "}
+      {small ? <SmallVersion item={item} /> : <LargeVersion item={item} />}
     </article>
   );
 }
