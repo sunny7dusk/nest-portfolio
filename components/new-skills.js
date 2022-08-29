@@ -9,7 +9,7 @@ export default function Skills() {
       <div className="snap-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 w-[70vw] justify-center mt-36 ">
         <motion.div
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="self-center text-justify lg:col-span-4"
+          className="self-center lg:col-span-4"
         >
           <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl">
             I&apos;m always learning new technologies to broaden my skill set!
