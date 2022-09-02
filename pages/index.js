@@ -83,6 +83,10 @@ export default function Home(props) {
 
       <main>
         <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center"
           aria-label={"intro"}
@@ -91,6 +95,10 @@ export default function Home(props) {
         </motion.section>
 
         <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center items-center"
           aria-label={"skills"}
@@ -99,6 +107,10 @@ export default function Home(props) {
         </motion.section>
 
         <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full  flex flex-col justify-center align-middle mt-36 "
           aria-label={"bio"}
@@ -106,6 +118,10 @@ export default function Home(props) {
           <Bio />
         </motion.section>
         <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center mt-36 align-middle"
           aria-label={"projects"}
@@ -114,6 +130,10 @@ export default function Home(props) {
         </motion.section>
 
         <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
           className="w-full flex flex-col justify-center mt-36 align-middle"
           aria-label={"blogs"}
