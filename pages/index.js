@@ -26,7 +26,7 @@ export default function Home(props) {
       setY(latest);
     });
   }, []);
-  setY({});
+  // setY({});
   return (
     <>
       <section className="w-full h-[100vh] relative tracking-wide">
