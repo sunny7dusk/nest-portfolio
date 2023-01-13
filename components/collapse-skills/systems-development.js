@@ -1,5 +1,5 @@
 import { BsArrowReturnRight } from "react-icons/bs";
-import { SiC, SiRust, SiPython } from "react-icons/si";
+import { SiC, SiRust, SiPython, SiDocker } from "react-icons/si";
 import { VscTerminalLinux, VscTerminalBash } from "react-icons/vsc";
 export default function SystemsDevelopment() {
   return (
@@ -15,6 +15,10 @@ export default function SystemsDevelopment() {
           className="ease-in-out duration-150 hover:scale-125"
         />
         <SiPython
+          width={60}
+          className="ease-in-out duration-150 hover:scale-125"
+        />
+        <SiDocker
           width={60}
           className="ease-in-out duration-150 hover:scale-125"
         />
