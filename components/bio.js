@@ -87,7 +87,7 @@ export default function Bio() {
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
             <nav aria-label="google developer student clubs at virginia tech">
-              Studying Computer Science at{" "}
+              Studied Computer Science and graduated at{" "}
               <a
                 href="https://cs.vt.edu/"
                 target="_blank"
