@@ -22,30 +22,9 @@ export default function Bio() {
         </li>
 
         <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
-          <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
-          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
-            {" "}
-            2019 (Ongoing)
-          </time>
-          <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
-            <nav aria-label="google developer student clubs at virginia tech">
-              Studying Computer Science at{" "}
-              <a
-                href="https://cs.vt.edu/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                Virginia Tech
-              </a>{" "}
-              as a Senior
-            </nav>
-          </div>
-        </li>
-        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
           <div className="absolute rounded-full border bg-[#84B8D9] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
-            2021 (Ongoing)
+            2021-2022
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
             <nav aria-label="google developer student clubs at virginia tech">
@@ -62,9 +41,9 @@ export default function Bio() {
           </div>
         </li>
         <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
-          <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
-            2021 (Ongoing)
+            2021 - 2022
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
             <nav aria-label="rocketry at virginia tech">
@@ -82,7 +61,7 @@ export default function Bio() {
         </li>
         {/* <FaCaretDown color="#94a3b8" className="w-full justify-end text-end" /> */}
         <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
-          <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
 
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
             2022
@@ -97,6 +76,46 @@ export default function Bio() {
               >
                 <span className="underline">ScienceLogic</span>
               </Link>
+            </nav>
+          </div>
+        </li>
+        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#84B8D9] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            {" "}
+            2023 Spring
+          </time>
+          <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
+            <nav aria-label="google developer student clubs at virginia tech">
+              Studying Computer Science at{" "}
+              <a
+                href="https://cs.vt.edu/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="underline"
+              >
+                Virginia Tech
+              </a>{" "}
+            </nav>
+          </div>
+        </li>
+        <li className="hover:text-white animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
+          <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
+          <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
+            {" "}
+            2023
+          </time>
+          <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
+            <nav aria-label="google developer student clubs at virginia tech">
+              Part time Associate Consultant at{" "}
+              <a
+                href="https://www.kollabio.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="underline"
+              >
+                Kollabio
+              </a>{" "}
             </nav>
           </div>
         </li>
