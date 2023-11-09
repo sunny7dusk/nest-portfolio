@@ -103,11 +103,11 @@ export default function Bio() {
           <div className="absolute rounded-full border bg-[#F2CC85] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>
           <time className="p-2 sm:p-4 text-xs sm:text-md lg:text-xl 2xl:text-4xl">
             {" "}
-            2023
+            2023 - Ongoing
           </time>
           <div className="pt-2 pl-2 pb-2 sm:pt-4 sm:pl-4 sm:pb-4">
             <nav aria-label="google developer student clubs at virginia tech">
-              Part time Associate Consultant at{" "}
+              Associate Consultant at{" "}
               <a
                 href="https://www.kollabio.com/"
                 target="_blank"
