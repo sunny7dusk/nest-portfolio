@@ -72,14 +72,14 @@ export default function Home(props) {
         </motion.div>
       </section>
 
-      <div className="flex flex-col justify-center items-center">
+      {/* <div className="flex flex-col justify-center items-center">
         <Lottie
           animationData={computerAnim}
           autoPlay
           loop
           className="w-[50%] min-h-[50%]"
         />
-      </div>
+      </div> */}
 
       <main>
         <motion.section
