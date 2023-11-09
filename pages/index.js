@@ -3,8 +3,8 @@ import Skills from "../components/new-skills";
 import Projects from "../components/project";
 import Bio from "../components/bio";
 import Blogs from "../components/blogs";
-import computerAnim from "../public/assets/computer.json";
-import Lottie from "lottie-react";
+// import computerAnim from "../public/assets/computer.json";
+// import Lottie from "lottie-react";
 
 import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
