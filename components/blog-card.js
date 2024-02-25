@@ -4,7 +4,7 @@ export default function BlogCard({ item, small }) {
   return (
     <article
       key={item.slug.current}
-      className={`p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] col-span-1 lg:col-span-2 w-full h-full`}
+      className={`w-full p-1 shadow-xl rounded-2xl bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] col-span-1 lg:col-span-2  h-full`}
     >
       {small ? <SmallVersion item={item} /> : <LargeVersion item={item} />}
     </article>
@@ -14,7 +14,7 @@ export default function BlogCard({ item, small }) {
 function SmallVersion({ item }) {
   return (
     <Link href={`/blog/${item.slug.current}`}>
-      <div className="flex flex-row justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90">
+      <div className="flex flex-row justify-end h-full p-6 bg-gray-900 sm:p-8 rounded-xl hover:bg-opacity-90 w-full">
         <div className="flex flex-col w-full">
           {item.publishedAt && (
             <p className="text-xs font-medium text-gray-500">

@@ -4,7 +4,7 @@ import BlogCard from "./blog-card";
 export default function Blogs({ posts }) {
   return (
     <>
-      <div className="w-[70vw] self-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-items-center items-center">
+      <div className="self-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-items-center items-center">
         <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100 lg:col-span-6">
           Wanna see what I&apos;ve been up to? Check out my blog{" "}
           <Link href="/blog" prefetch>

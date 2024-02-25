@@ -138,7 +138,7 @@ export default function Footer() {
         </div>
       </div>
       <small className="block text-gray-300 self-center pt-16">
-        &copy; Copyright 2022, Nathaniel Zhuo En Chai
+        &copy; Copyright 2023, Nathaniel Zhuo En Chai
       </small>
     </footer>
   );

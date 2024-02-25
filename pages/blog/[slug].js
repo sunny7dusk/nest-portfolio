@@ -111,18 +111,18 @@ export default function Post({ data, preview }) {
           rel="stylesheet"
         /> */}
       </Head>
-      <article className="w-[100vw] grid grid-cols-7 lg:grid-cols-5 place-content-stretch pb-8">
+      <article className="w-[100vw] grid grid-cols-12 lg:grid-cols-5 place-content-stretch pb-8">
         <span
           onClick={() => {
             router.back();
           }}
-          className="cursor-pointer col-span-7 lg:col-span-5 justify-center text-slate-400 m-8 md:m-16"
+          className="cursor-pointer col-span-12 lg:col-span-5 justify-center text-slate-400 m-8 md:m-16"
           color="#94a3b8"
         >
           <FaArrowLeft />
         </span>
         <div className="col-span-1"></div>
-        <section className="grid grid-cols-3 col-span-5 lg:col-span-3 border-dashed border-gray-100">
+        <section className="grid grid-cols-3 col-span-10 lg:col-span-3 border-dashed border-gray-100">
           <h1 className="col-span-3 pt-8 lg:pb-8 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-wide text-center">
             {title}
           </h1>

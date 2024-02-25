@@ -6,7 +6,7 @@ export default function Projects({ posts }) {
   // console.log(props);
   return (
     <>
-      <div className="w-[70vw] self-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-items-center items-center">
+      <div className="self-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-items-center items-center">
         <div className="lg:col-span-3 mb-10 lg:mb-0 grid grid-cols-1 gap-8">
           {posts &&
             posts.map((item) => (

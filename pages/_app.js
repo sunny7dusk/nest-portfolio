@@ -94,8 +94,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {loading ? (
         <Loading />
+
       ) : (
-        <section>
+        <section className="w-full bg-[rgba(23,26,38,1)] bg-dot-white/[0.2] ">
           <Component {...pageProps} />
           <Footer />
         </section>
