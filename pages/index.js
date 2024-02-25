@@ -7,7 +7,6 @@ import Blogs from "../components/blogs";
 // import computerAnim from "../public/assets/computer.json";
 // import Lottie from "lottie-react";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { getClient } from "@lib/sanity.server";
@@ -36,7 +35,7 @@ export default function Home(props) {
   const { posts, postsAll } = data;
   // const { scrollY } = useScroll();
   // const [y, setY] = useState(0);
-  const [furry, setFurry] = useState(false);
+  // const [furry, setFurry] = useState(false);
 
   // useEffect(() => {
   //   // setCurrInnerWidth(window.innerWidth);

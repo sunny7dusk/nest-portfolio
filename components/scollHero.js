@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
 import { ContainerScroll } from "./ui/container-scroll-animation";
-import meCodingSmall from "../public/assets/dark7storm_small.jpg"
-import meCoding from "../public/assets/dark7storm_full.webp"
-import derg from '../public/assets/derg.jpg'
-import dergSmall from '../public/assets/dergsmall.jpg'
+// import meCodingSmall from "/assets/dark7storm_small.jpg"
+// import meCoding from "/assets/dark7storm_full.webp"
+// import derg from '/assets/derg.jpg'
+// import dergSmall from '/assets/dergsmall.jpg'
 export function HeroScrollDemo() {
   return (
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
         users={users}
-        small={meCodingSmall}
-        normal={meCoding}
+        small={`/assets/dark7storm_small.jpg`}
+        normal={`/assets/dark7storm_full.webp`}
         titleComponent={
           <>
             <h1 className="text-xl md:text-4xl font-semibold text-slate-300">
@@ -33,8 +33,8 @@ export function HeroScrollOwo() {
       <ContainerScroll
         users={users}
         src
-        small={dergSmall}
-        normal={derg}
+        small={`/assets/dark7storm_small.jpg`}
+        normal={`/assets/dark7storm_full.webp`}
         titleComponent={
           <>
             <h1 className="text-xl md:text-4xl font-semibold text-slate-300">

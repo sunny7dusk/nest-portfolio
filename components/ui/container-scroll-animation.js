@@ -76,8 +76,8 @@ export const Header = ({ translate, titleComponent }) => {
 export const Card = ({
   rotate,
   scale,
-  translate,
-  users,
+  // translate,
+  // users,
   small,
   normal
 }) => {
