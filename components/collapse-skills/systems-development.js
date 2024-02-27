@@ -3,7 +3,7 @@ import { SiC, SiRust, SiPython, SiDocker } from "react-icons/si";
 import { VscTerminalLinux, VscTerminalBash } from "react-icons/vsc";
 export default function SystemsDevelopment() {
   return (
-    <div className="lg:text-slate-300 text-[#84B8D9] text-sm sm:text-lg lg:text-1xl 2xl:text-4xl text-center hover:text-[#84B8D9]">
+    <div className="lg:text-slate-300 text-[#84B8D9] text-xl 2xl:text-4xl text-center hover:text-[#84B8D9]">
       <div className="flex flex-row items-center hover:scale-105 ease-in-out duration-150 ">
         <BsArrowReturnRight className="mr-4" color="#84B8D9" />
         <span className="select-none ">Systems Programming</span>

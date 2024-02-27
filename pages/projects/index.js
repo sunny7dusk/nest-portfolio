@@ -99,7 +99,7 @@ export default function Post(props) {
           </span>
           <br />
           <Link href={"/"} alt="home page">
-            <span className="bg-clip-text cursor-pointer text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-sm sm:text-1xl lg:text-2xl 2xl:text-4xl">
+            <span className="bg-clip-text cursor-pointer text-transparent bg-gradient-to-r from-slate-300 to-slate-400 text-xl lg:text-2xl 2xl:text-4xl">
               Click here to go back {">.<"}
             </span>
           </Link>

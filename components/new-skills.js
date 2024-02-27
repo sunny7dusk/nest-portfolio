@@ -11,7 +11,7 @@ export default function Skills() {
           transition={{ type: "spring", ease: "easeInOut" }}
           className="self-center lg:col-span-4"
         >
-          <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl">
+          <span className="text-slate-300 text-xl lg:text-2xl 2xl:text-5xl">
             I&apos;m always learning new technologies to broaden my skill set!
             Here are some of the technologies I&apos;ve been working with!
           </span>

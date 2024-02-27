@@ -3,13 +3,13 @@ export default function Bio() {
   return (
     <>
       <div className="self-center">
-        <span className="select-none text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100">
+        <span className="select-none text-slate-300 text-xl lg:text-2xl 2xl:text-5xl underline-light-100">
           Here&apos;s my story so far :<br />
         </span>
       </div>
       <ul
         aria-label="timeline"
-        className="relative mt-4 text-sm sm:text-xl lg:text-2xl 2xl:text-5xl self-center text-slate-300 lg:text-slate-500 "
+        className="relative mt-4 text-xl lg:text-2xl 2xl:text-5xl self-center text-slate-300 lg:text-slate-500 "
       >
         <li className="hover:text-slate-300 animation ease-in-out duration-100 list-none border-l-2 border-slate-400 pb-4">
           <div className="absolute rounded-full border bg-[#A3767D] w-3 h-3  mt-1.5 -left-1.5 md:w-5 md:h-5  md:mt-2.5 md:-left-2.5"></div>

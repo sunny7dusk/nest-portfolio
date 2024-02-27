@@ -14,7 +14,7 @@ export default function Projects({ posts }) {
             ))}
         </div>
         <div className="lg:col-span-1"></div>
-        <span className="text-slate-300 text-md sm:text-1xl lg:text-2xl 2xl:text-5xl underline-light-100 lg:col-span-6">
+        <span className="text-slate-300 text-xl lg:text-2xl 2xl:text-5xl underline-light-100 lg:col-span-6">
           Come take a look at projects I&apos;ve done! Click{" "}
           <Link href="/projects" prefetch>
             <span className="underline decoration-solid decoration-[#F2CC85]/70 underline-offset-8 hover:font-bold font-normal animation ease-in-out cursor-pointer">
