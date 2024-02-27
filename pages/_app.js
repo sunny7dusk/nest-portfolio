@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Footer from "../components/footer";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 const validRoutes = [
@@ -93,14 +94,16 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       {loading ? (
-        <Loading />
-
+          <Loading />
       ) : (
         <section className="w-full bg-[rgba(23,26,38,1)] bg-dot-white/[0.2] ">
           <Component {...pageProps} />
           <Footer />
         </section>
       )}
+
+      <SpeedInsights/>
+
     </>
   );
 }
