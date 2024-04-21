@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Footer from "../components/footer";
 import Script from "next/script";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+// import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const previewImg = "https://i.imgur.com/YWr7FcG.jpg";
 const validRoutes = [
@@ -102,7 +102,7 @@ function MyApp({ Component, pageProps }) {
         </section>
       )}
 
-      <SpeedInsights/>
+      {/* <SpeedInsights/> */}
 
     </>
   );

@@ -91,7 +91,7 @@ export default function Post(props) {
           rel="stylesheet"
         /> */}
       </Head>
-      <section className="w-[100vw] grid grid-cols-10 lg:grid-cols-12 mb-16 pt-16 place-items-stretch">
+      <section className="grid grid-cols-10 lg:grid-cols-12 mb-16 pt-16 place-items-stretch">
         <div className="col-span-1"></div>
         <section className="col-span-7 lg:col-span-9 select-none">
           <span className="pt-8 pb-4 ease-in-out duration-300 bg-clip-text text-transparent bg-gradient-to-r from-[#A3767D] via-[#F2CC85] to-[#84B8D9] text-xl sm:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide">
@@ -107,7 +107,7 @@ export default function Post(props) {
         <Lottie animationData={thinkingAnim} autoPlay loop />
         <div className="col-span-1"></div>
       </section>
-      <section className="w-[100vw] grid grid-cols-12 justify-items-center content-center items-center">
+      <section className="grid grid-cols-12 justify-items-center content-center items-center">
         <div className="col-span-1 col-start-1"></div>
         <section className="col-span-10 grid grid-cols-1 lg:grid-cols-6 gap-16 justify-items-center content-center items-center">
           {items &&
@@ -117,7 +117,7 @@ export default function Post(props) {
         </section>
         <div className="col-span-1"></div>
       </section>
-      <div className="w-[100vw] flex flex-col align-middle justify-center pt-16 pb-16">
+      <div className="flex flex-col align-middle justify-center pt-16 pb-16">
         {loadMore && (
           <div className="self-center m-auto">
             <a

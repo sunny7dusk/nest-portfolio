@@ -52,7 +52,7 @@ export default function Post({ data, preview }) {
   if (router.isFallback) {
     return (
       <>
-        <div className="w-[100vw] h-[100vh] flex flex-col align-middle justify-center text-center">
+        <div className="h-[100vh] flex flex-col align-middle justify-center text-center">
           <span>If it takes a while to load, come back later!</span>
         </div>
       </>
@@ -111,7 +111,7 @@ export default function Post({ data, preview }) {
           rel="stylesheet"
         /> */}
       </Head>
-      <article className="w-[100vw] grid grid-cols-12 lg:grid-cols-5 place-content-stretch pb-8">
+      <article className="grid grid-cols-12 lg:grid-cols-5 place-content-stretch pb-8">
         <span
           onClick={() => {
             router.back();
