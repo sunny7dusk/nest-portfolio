@@ -79,11 +79,11 @@ export function Intro() {
         <br />
       </header>
       <div className="self-center max-w-[1980px]">
-        <span className="text-slate-300 text-xl lg:text-2xl 2xl:text-5xl">
+        <span className="text-slate-300 text-xl lg:text-2xl 2xl:text-5xl text-pretty">
           Growing up in Malaysia, I have always been fascinated by the
           technological side of the world. Driven by the desire to learn, I
           constantly immerse myself in new and upcoming programming
-          technologies. This is what led me to study and graduate with a Bachelor&apos;s in Computer Science from Virginia Tech. I am currently working in the industry as an Associate Consultant.
+          technologies. This is what led me to study and graduate with a Bachelor&apos;s in Computer Science from Virginia Tech. I am currently working in the industry as an Senior Consultant.
         </span>
       </div>
     </section>
