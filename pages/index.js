@@ -4,18 +4,11 @@ import Projects from "../components/project";
 import Bio from "../components/bio";
 import Blogs from "../components/blogs";
 
-// import computerAnim from "../public/assets/computer.json";
-// import Lottie from "lottie-react";
-
-import { motion } from "framer-motion";
-
 import { getClient } from "@lib/sanity.server";
 
 import { groq } from "next-sanity";
 import { HeroScrollDemo } from "components/scollHero";
 import { TypewriterEffectSmooth } from "components/typewriter";
-// import { MacbookScroll } from "components/macbook";
-// import code from "../public/assets/code.png"
 const words = [
   {
     text: "Interested?",
@@ -33,42 +26,22 @@ const words = [
 export default function Home(props) {
   const { data } = props;
   const { posts, postsAll } = data;
-  // const { scrollY } = useScroll();
-  // const [y, setY] = useState(0);
-  // const [furry, setFurry] = useState(false);
-
-  // useEffect(() => {
-  //   // setCurrInnerWidth(window.innerWidth);
-  //   window.scrollTo(0, 0);
-  //   return scrollY.onChange((latest) => {
-  //     setY(latest);
-  //   });
-  // }, []);
 
   return (
     <>
-      {/* <HeroParallax products={postToProduct} /> */}
 
       <HeroScrollDemo />
       <main >
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        <section
+
           className="w-full flex flex-col justify-center -mt-60 md:-mt-0 px-6 md:px-24"
           aria-label={"intro"}
         >
           <Intro />
-        </motion.section>
+        </section>
 
-        {/* <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        {/* <section
+
           className="w-full flex flex-col justify-center -mt-60 md:-mt-0 px-6 md:px-24"
           aria-label={"macbook"}
         >
@@ -79,67 +52,47 @@ export default function Home(props) {
           </span>
         }
         src={code}/>
-        </motion.section> */}
+        </section> */}
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        <section
+
           className="w-full flex flex-col justify-center align-middle items-center px-6 md:px-24"
           aria-label={"skills"}
         >
           <Skills />
-        </motion.section>
+        </section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        <section
+
           className="w-full  flex flex-col justify-center align-middle mt-36 px-6 md:px-24"
           aria-label={"bio"}
         >
           <Bio />
-        </motion.section>
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        </section>
+        <section
+
           className="w-full flex flex-col justify-center mt-36 align-middle px-6 md:px-24"
           aria-label={"projects"}
         >
           <Projects posts={posts} />
-        </motion.section>
+        </section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        <section
+
           className="w-full flex flex-col justify-center mt-36 align-middle px-6 md:px-24"
           aria-label={"blogs"}
         >
           <Blogs posts={postsAll} />
-        </motion.section>
+        </section>
 
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 0.8 }}
-          transition={{ type: "spring", ease: "easeInOut" }}
+        <section
+
           className="w-full flex flex-col justify-center mt-36 align-middle px-6 md:px-24"
           aria-label={"contact"}
         >
           <TypewriterEffectSmooth words={words} className="w-full flex justify-center"/>
-        </motion.section>
+        </section>
       </main>
     </>
   );

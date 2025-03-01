@@ -17,6 +17,10 @@ body {
   /* height: 100%;
   width: 100%; */
   overflow-x: hidden;
+
+  position: absolute !important;
+  z-index: 1;
+  height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -25,4 +29,18 @@ body::-webkit-scrollbar {
 
 #__next {
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* height: 100%;
+  width: 100%; */
+  overflow-x: hidden;
+  /* @apply bg-dot-white/[0.2] bg-[rgba(23,26,38,1)] ; */
+}
+
+.vanta-canvas {
+  filter: brightness(0.5);
 }
