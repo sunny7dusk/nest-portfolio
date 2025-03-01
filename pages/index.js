@@ -50,7 +50,7 @@ export default function Home(props) {
       {/* <HeroParallax products={postToProduct} /> */}
 
       <HeroScrollDemo />
-      <main>
+      <main >
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -87,7 +87,7 @@ export default function Home(props) {
           viewport={{ once: true }}
           animate={{ scale: 0.8 }}
           transition={{ type: "spring", ease: "easeInOut" }}
-          className="w-full flex flex-col justify-center items-center px-6 md:px-24"
+          className="w-full flex flex-col justify-center align-middle items-center px-6 md:px-24"
           aria-label={"skills"}
         >
           <Skills />

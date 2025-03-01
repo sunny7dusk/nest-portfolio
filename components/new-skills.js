@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import WebDevelopment from "./collapse-skills/web-development";
 import AppDevelopment from "./collapse-skills/app-development";
 import SystemsDevelopment from "./collapse-skills/systems-development";
+import CloudTechnologies from "./collapse-skills/cloud-technologies";
 
 export default function Skills() {
   return (
     <>
-      <div className="snap-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-center mt-36 ">
+      <div className="snap-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-center mt-36 max-w-[1980px]">
         <motion.div
           transition={{ type: "spring", ease: "easeInOut" }}
           className="self-center lg:col-span-4"
@@ -23,6 +24,9 @@ export default function Skills() {
           </div>
           <div className="py-4">
             <AppDevelopment />
+          </div>
+          <div className="py-4">
+            <CloudTechnologies />
           </div>
           <div className="py-4">
             <SystemsDevelopment />

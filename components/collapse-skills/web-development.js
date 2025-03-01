@@ -11,8 +11,11 @@ import {
   SiAngular,
   SiNodedotjs,
   SiTailwindcss,
-  SiStyledcomponents,
+  SiStyledcomponents
 } from "react-icons/si";
+import {
+  FaAws
+} from "react-icons/fa"
 
 export default function WebDevelopment() {
   return (
