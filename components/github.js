@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 
-export default function Blogs({ posts }) {
+export default function Github() {
   return (
     <>
       <div className="self-center grid grid-cols-1 lg:grid-cols-10 gap-x-3.5 justify-items-center items-center">
