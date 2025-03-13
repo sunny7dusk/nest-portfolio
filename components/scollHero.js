@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { ContainerScroll } from "./ui/container-scroll-animation";
+import { ColourfulText } from "./ui/colourful-text";
 // import meCodingSmall from "/assets/dark7storm_small.jpg"
 // import meCoding from "/assets/dark7storm_full.webp"
 // import derg from '/assets/derg.jpg'
@@ -16,9 +17,9 @@ export function HeroScrollDemo() {
           <>
             <h1 className="text-xl md:text-4xl font-semibold text-slate-300">
               Full Stack Developer <br />
-              <span className="text-5xl md:text-[6rem] font-bold mt-1 leading-none">
-                Nathaniel Chai
-              </span>
+              <ColourfulText className="text-5xl md:text-[6rem] font-bold mt-1 leading-none" text="Nathaniel Chai">
+
+              </ColourfulText>
             </h1>
           </>
         }
