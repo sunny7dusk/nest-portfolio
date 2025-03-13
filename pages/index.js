@@ -3,6 +3,7 @@ import Skills from "../components/new-skills";
 import Projects from "../components/project";
 import Bio from "../components/bio";
 import Blogs from "../components/blogs";
+import Github from "../components/github";
 
 import { getClient } from "@lib/sanity.server";
 
@@ -61,6 +62,13 @@ export default function Home(props) {
         >
           <Skills />
         </section>
+        <section
+
+          className="w-full  flex flex-col justify-center align-middle mt-36 px-6 md:px-24"
+          aria-label={"bio"}
+          >
+          <Github />
+        </section>
 
         <section
 
@@ -69,6 +77,7 @@ export default function Home(props) {
         >
           <Bio />
         </section>
+
         <section
 
           className="w-full flex flex-col justify-center mt-36 align-middle px-6 md:px-24"
