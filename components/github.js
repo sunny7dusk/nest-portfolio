@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-
 export default function Github() {
   return (
     <>
@@ -11,11 +8,11 @@ export default function Github() {
         </span>
 
         <div className="lg:col-span-10 mt-10 lg:mt-0 grid grid-cols-1 gap-8 lg:px-64">
-            <Image aria-label="my github stats" width={1980} height={1080} className="object-contain" src="https://github-readme-stats-two-wheat.vercel.app/api?username=sunny7dusk&show_icons=true&theme=transparent&hide_border=true&title_color=cbd5ff"/>
+            <img loading="lazy" aria-label="my github stats" width={1980} height={1080} className="object-contain" src="https://github-readme-stats-two-wheat.vercel.app/api?username=sunny7dusk&show_icons=true&theme=transparent&hide_border=true&title_color=cbd5ff"/>
         </div>
 
         <div className="lg:col-span-10 mt-10 lg:mt-0 grid grid-cols-1 gap-8 lg:px-64">
-            <Image aria-label='my most used languages' width={1980} height={1080} className="object-contain" src="https://github-readme-stats-two-wheat.vercel.app/api/top-langs/?username=sunny7dusk&theme=transparent&hide=css,html&hide_border=true&title_color=cbd5ff&layout=donut"/>
+            <img loading="lazy" aria-label='my most used languages' width={1980} height={1080} className="object-contain" src="https://github-readme-stats-two-wheat.vercel.app/api/top-langs/?username=sunny7dusk&theme=transparent&hide=css,html&hide_border=true&title_color=cbd5ff&layout=donut"/>
         </div>
       </div>
     </>

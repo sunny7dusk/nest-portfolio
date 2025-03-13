@@ -17,6 +17,6 @@ module.exports = withBundleAnalyzer({
   },
   rewrites: () => [STUDIO_REWRITE],
   images: {
-    domains: ["assets.vercel.com", "cdn.sanity.io", "github-readme-stats-two-wheat.vercel.app"],
+    domains: ["assets.vercel.com", "cdn.sanity.io"],
   },
 });
