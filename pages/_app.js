@@ -23,7 +23,6 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
   const [vantaEffect, setVantaEffect] = useState(null)
   const vantaRef = useRef(null)
-
   useEffect(() => {
     const handleComplete = () => {
       setTimeout(() => {
@@ -62,6 +61,11 @@ function MyApp({ Component, pageProps }) {
     router.events.on("routeChangeStart", handleLoading);
     router.events.on("routeChangeComplete", handleComplete);
     router.events.on("routeChangeError", handleError);
+
+    setTimeout(() => {
+        setLoading(false);
+      }, 500);
+
     return () => {
       router.events.off("routeChangeStart", handleLoading);
       router.events.off("routeChangeComplete", handleComplete);

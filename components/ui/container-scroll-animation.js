@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useScroll, useTransform, motion } from "framer-motion";
+import React, { useRef } from "react";
 
 export const ContainerScroll = ({
   users,
@@ -106,7 +106,7 @@ export const Card = ({
     >
       <div className="bg-gray-100 h-full w-full rounded-2xl grid overflow-hidden">
         {isMobile && <Image src={small} width={809} height={1080} />}
-        {!isMobile && <Image src={normal} width={1980} height={1080} />}
+        {!isMobile && <Image src={normal} width={1980} height={1080} style={{'height': '-webkit-fill-available'}} />}
 
 
         {/* {users.map((user, idx) => (

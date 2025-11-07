@@ -6,9 +6,9 @@
     "node": "22.x"
   },
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--no-experimental-global-navigator' next dev",
+    "dev": "next dev",
     "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
-    "build": "cross-env NODE_ENV=production NODE_OPTIONS='--no-experimental-global-navigator' next build",
+    "build": "cross-env NODE_ENV=production next build",
     "start": "next start",
     "sanity": "cd studio && sanity start",
     "lint": "next lint",
