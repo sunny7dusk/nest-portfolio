@@ -1,10 +1,11 @@
 import { getClient } from "@lib/sanity.server";
 import Head from "next/head";
 
-import Lottie from "lottie-react";
 import { groq } from "next-sanity";
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
 import thinkingAnim from "../../public/assets/thinking.json";
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 import BlogCard from "components/blog-card";
 import Link from "next/link";

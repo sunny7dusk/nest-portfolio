@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 
 // import { Player } from "@lottiefiles/react-lottie-player";
 import BlogCard from "components/blog-card";
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
 import thinkingAnim from "../../public/assets/thinking.json";
-
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 export default function Post(props) {
   const { postdata } = props;
   const [items, setItems] = useState([]);
