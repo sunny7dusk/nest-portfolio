@@ -1,14 +1,14 @@
-import Head from "next/head";
 import { getClient } from "@lib/sanity.server";
+import Head from "next/head";
 
+import Lottie from "lottie-react";
 import { groq } from "next-sanity";
 import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
 import thinkingAnim from "../../public/assets/thinking.json";
 
+import BlogCard from "components/blog-card";
 import Link from "next/link";
 import Script from "next/script";
-import BlogCard from "components/blog-card";
 
 export default function Post(props) {
   const { postdata } = props;
@@ -54,7 +54,7 @@ export default function Post(props) {
           property="description"
           content="Nate's blog powered with Sanity.io; I put whatever I want here >.<"
         />
-        <link rel="canonical" href="/blog" />
+        {/* <link rel="canonical" href="/blog" /> */}
         <meta property="og:title" content="Nathaniel Chai Zhuo En | Blog" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.sunny7dusk.dev/blog" />

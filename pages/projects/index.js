@@ -1,15 +1,15 @@
-import Head from "next/head";
 import { getClient } from "@lib/sanity.server";
+import Head from "next/head";
 
 import { groq } from "next-sanity";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 // import { Player } from "@lottiefiles/react-lottie-player";
+import BlogCard from "components/blog-card";
 import Lottie from "lottie-react";
 import thinkingAnim from "../../public/assets/thinking.json";
-import BlogCard from "components/blog-card";
 
 export default function Post(props) {
   const { postdata } = props;
@@ -55,7 +55,7 @@ export default function Post(props) {
           property="description"
           content="Nate's projects powered with Sanity.io; Personal/Work/School >.<"
         />
-        <link rel="canonical" href="/projects" />
+        {/* <link rel="canonical" href="/projects" /> */}
         <meta property="og:title" content="Nathaniel Chai Zhuo En | Projects" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.sunny7dusk.dev/projects" />

@@ -1,19 +1,19 @@
 /* eslint-disable react/no-children-prop */
 // pages/posts/[slug].js
+import { groq } from "next-sanity";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { groq } from "next-sanity";
-import { usePreviewSubscription, urlFor } from "../../lib/sanity";
-import { getClient } from "../../lib/sanity.server";
+import Script from "next/script";
+import NotFoundPage from "pages/404";
+import { FaArrowLeft } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import { FaArrowLeft } from "react-icons/fa";
-import Script from "next/script";
-import NotFoundPage from "pages/404";
+import { urlFor, usePreviewSubscription } from "../../lib/sanity";
+import { getClient } from "../../lib/sanity.server";
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -75,7 +75,7 @@ export default function Post({ data, preview }) {
         <title>Nate&apos;s Blog | {title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta property="description" content={excerpt} />
-        <link rel="canonical" href={`/blog/${post.slug}`} />
+        {/* <link rel="canonical" href={`/blog/${post.slug}`} /> */}
         <meta
           property="og:title"
           content={`Nathaniel Chai Zhuo En | ${excerpt}`}
