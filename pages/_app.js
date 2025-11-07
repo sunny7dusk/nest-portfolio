@@ -1,11 +1,11 @@
-import "../styles/tailwind.css";
-import { useRouter } from "next/router";
-import Loading from "../components/loading";
-import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
-import Footer from "../components/footer";
+import { useRouter } from "next/router";
 import Script from "next/script";
-import DOTS from 'vanta/dist/vanta.dots.min.js'
+import { useEffect, useRef, useState } from "react";
+import DOTS from 'vanta/dist/vanta.dots.min.js';
+import Footer from "../components/footer";
+import Loading from "../components/loading";
+import "../styles/tailwind.css";
 
 // import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -81,7 +81,6 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Nathaniel Chai Zhuo En | Senior Consultant at Kollabio. Welcome to my portfolio! This is build with NextJS, Sanity.io and Tailwind."
         />
-        <link rel="canonical" href="/Portfolio" />
         <meta
           property="og:title"
           content="Nathaniel Chai Zhuo En | Portfolio"
